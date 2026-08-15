@@ -1,0 +1,11 @@
+
+/* Live v5: fullscreen controls stay attached to the player */
+#fn-live-player .fn-live-video-wrap{position:relative}
+#fn-live-player .fn-live-video-close{position:absolute;inset-block-start:10px;inset-inline-end:10px;z-index:8;width:38px;height:38px;border:1px solid rgba(255,255,255,.35);border-radius:10px;background:rgba(0,0,0,.72);color:#fff;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+#fn-live-player .fn-live-video-close:hover{background:rgba(0,0,0,.92)}
+#fn-live-player:fullscreen{width:100vw;height:100dvh;max-width:none;margin:0;border:0;border-radius:0;display:flex;flex-direction:column;background:#000}
+#fn-live-player:fullscreen .fn-live-video-wrap{flex:1;min-height:0;max-height:none;aspect-ratio:auto}
+#fn-live-player:fullscreen .fn-live-video{width:100%;height:100%;object-fit:contain}
+#fn-live-player:fullscreen .fn-live-player-bar{display:flex!important;position:relative;flex:none;min-height:46px;padding-bottom:max(8px,env(safe-area-inset-bottom));z-index:10}
+#fn-live-player:fullscreen .fn-live-error{flex:none;z-index:11}
+@media(max-width:620px){#fn-live-player .fn-live-video-close{width:36px;height:36px;inset-block-start:8px;inset-inline-end:8px}.fn-live-player-bar{gap:5px;padding-inline:7px}.fn-live-player-bar .fn-live-nav-btn,.fn-live-player-bar .fn-live-close{width:36px;height:34px;flex:none}.fn-live-player-bar .fn-live-now{font-size:12px}.fn-live-player-bar .fn-live-state{display:none}}
