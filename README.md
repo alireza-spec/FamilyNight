@@ -4,7 +4,7 @@
 
 ### A single-file, self-hosted movie & TV discovery app / یک اپلیکیشن تک‌فایلی برای کشف فیلم و سریال
 
-**🔗 Live Demo:** [alireza-spec.github.io/FN](https://alireza-spec.github.io/FamilyNight/)
+**🔗 Live Demo:** [alireza-spec.github.io/FamilyNight](https://alireza-spec.github.io/FamilyNight/)
 
 *Built entirely as one portable HTML file — no build tools, no backend, no database.*
 *کاملاً در قالب یک فایل HTML — بدون نیاز به بیلد، بک‌اند یا دیتابیس.*
