@@ -1,0 +1,10 @@
+
+#fn-live-seek{display:none;position:absolute;inset-inline:12px;bottom:10px;z-index:8;align-items:center;gap:8px;padding:7px 10px;border-radius:9px;background:rgba(0,0,0,.72);color:#fff;font-size:11px;direction:ltr}
+#fn-live-seek.is-available{display:flex}
+#fn-live-seek input{flex:1;min-width:0;accent-color:var(--primary,#e0b34c);cursor:pointer}
+#fn-live-seek-time{min-width:86px;text-align:center;font-variant-numeric:tabular-nums;direction:ltr;opacity:.9}
+/* A playback failure is removed only after the complete catalogue has been visible for a moment. */
+#live-tab .fn-live-card.fn-live-stream-failed-queued{animation:fnLiveFailedFade .65s ease forwards;animation-delay:2.4s}
+#live-tab .fn-live-card.fn-live-stream-failed-hidden{display:none!important}
+@keyframes fnLiveFailedFade{to{opacity:.22;transform:scale(.97)}}
+@media(max-width:620px){#fn-live-seek{inset-inline:7px;bottom:7px;padding:5px 7px;gap:5px}#fn-live-seek-time{min-width:76px;font-size:10px}}
