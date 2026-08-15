@@ -1,0 +1,35 @@
+
+/* ===== v40.10.10 safe rating/opinion/compare patch ===== */
+.card { position: relative; }
+.card > div[style*="bottom:5px"][style*="f5c518"],
+.card > div[style*="bottom: 5px"][style*="f5c518"] { display:none !important; }
+.card .meta-sub span[style*="f5c518"] { display:none !important; }
+.fn-my-rating-badge-card {
+  position:absolute; top:5px; right:5px; z-index:9;
+  width:34px; height:34px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:radial-gradient(circle at 35% 25%, rgba(255,255,255,.35), rgba(245,197,24,.18) 45%, rgba(0,0,0,.40));
+  border:1px solid rgba(245,197,24,.82);
+  box-shadow:0 8px 20px rgba(0,0,0,.36), inset 0 1px 0 rgba(255,255,255,.25);
+  backdrop-filter:blur(7px); -webkit-backdrop-filter:blur(7px);
+  pointer-events:none;
+}
+.fn-my-rating-badge-card .fn-rating-star {
+  position:relative; width:28px; height:28px;
+  display:flex; align-items:center; justify-content:center;
+  color:#f5c518; font-size:28px; line-height:1;
+  text-shadow:0 1px 0 rgba(255,255,255,.32), 0 0 10px rgba(245,197,24,.45);
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.48));
+}
+.fn-my-rating-badge-card .fn-rating-num {
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  padding-top:2px; color:#050505; font-size:10px; font-weight:1000;
+  font-family:'Vazirmatn',sans-serif; text-shadow:0 1px 0 rgba(255,255,255,.35);
+}
+#opinion-chips { overflow:hidden; transition:max-height .28s ease, opacity .22s ease, transform .22s ease; }
+#opinion-chips.fn-opinion-collapsed { display:none !important; max-height:0 !important; opacity:0 !important; transform:translateY(-6px) scale(.99); }
+#opinion-chips.fn-opinion-open { animation:fnOpinionOpen .26s cubic-bezier(.2,.9,.2,1); }
+@keyframes fnOpinionOpen { from{opacity:0;transform:translateY(-8px) scale(.985);} to{opacity:1;transform:none;} }
+#personal-rating-section { cursor:pointer; }
+#personal-rating-section .personal-rating-label::after { content:'  ▾'; opacity:.65; font-size:11px; }
+.compare-awards-source { grid-column:1/-1; color:#999; font-size:10px; line-height:1.7; padding:0 16px 8px; text-align:center; }

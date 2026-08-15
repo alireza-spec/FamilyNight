@@ -1,0 +1,2054 @@
+<link rel="stylesheet" href="css/inline-01.css"><!DOCTYPE html>
+<html lang="fa" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#15171a">
+    <meta name="color-scheme" content="dark light">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Family Night">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <title>Family Night Ultimate v37 Restored Safe Themes</title>
+    <!-- DNS Prefetch & Preconnect for faster API/image loads -->
+    <link rel="preconnect" href="https://family-night-api.alirezadoe8.workers.dev" crossorigin>
+    <link rel="preconnect" href="https://family-night-api.alirezadoe8.workers.dev" crossorigin>
+    <link rel="preconnect" href="https://corsproxy.io">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://flagcdn.com">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/inline-02.css">
+
+<link rel="stylesheet" href="css/inline-03.css">
+
+
+<link rel="stylesheet" href="css/inline-04.css">
+
+
+<link rel="stylesheet" href="css/inline-05.css">
+
+<link rel="stylesheet" href="css/inline-06.css">
+<link rel="stylesheet" href="css/inline-07.css">
+<link rel="stylesheet" href="css/inline-08.css">
+<link rel="stylesheet" href="css/inline-09.css"></head>
+<body>
+    <!-- =================== LOADING SCREEN =================== -->
+    
+<script src="js/inline-01.js"></script>
+
+    <div id="app-loading-screen">
+        <div class="splash-phone">
+            <div class="splash-phone-notch"></div>
+            <div class="splash-phone-screen">
+                <div class="splash-phone-track" id="splash-phone-track">
+                    <img class="splash-phone-shot" src="screenshots/shot-2.jpg" onerror="this.style.opacity='0'">
+                    <img class="splash-phone-shot" src="screenshots/shot-9.jpg" onerror="this.style.opacity='0'">
+                    <img class="splash-phone-shot" src="screenshots/shot-4.jpg" onerror="this.style.opacity='0'">
+                    <img class="splash-phone-shot" src="screenshots/shot-6.jpg" onerror="this.style.opacity='0'">
+                    <img class="splash-phone-shot" src="screenshots/shot-5.jpg" onerror="this.style.opacity='0'">
+                </div>
+            </div>
+        </div>
+        <div class="splash-title">FAMILY NIGHT</div>
+        <div class="splash-feature-wrap" id="splash-feature-wrap"></div>
+        <div class="splash-progress-wrap">
+            <div class="splash-progress-track"><div class="splash-progress-fill" id="splash-progress-fill"></div></div>
+            <div class="splash-progress-pct" id="splash-progress-pct">0%</div>
+        </div>
+        <div class="splash-dev">developed by: Alireza Ahmadi</div>
+        <div style="position:absolute;bottom:6px;right:10px;font-size:9px;color:#4a4e54;letter-spacing:1px;">splash-v4</div>
+    </div>
+
+
+    <!-- =================== USER PROFILE MODAL =================== -->
+    <div id="user-profile-modal" onclick="closeProfileModal(event)">
+        <div class="up-sheet up-modern-profile" onclick="event.stopPropagation()">
+            <div class="up-header up-modern-header">
+                <button class="up-close-btn" type="button" onclick="closeProfileModalDirect()">×</button>
+                <span class="up-header-title" id="up-title-text">پروفایل / Profile</span>
+            </div>
+
+            <div class="up-modern-body">
+                <div class="up-avatar-wrap">
+                    <button id="up-preview-avatar" class="up-profile-avatar" type="button" onclick="openAvatarPicker(event)" title="Change avatar">
+                        <span class="up-avatar-placeholder">👤</span>
+                    </button>
+                    <button class="up-camera-btn" type="button" onclick="openAvatarPicker(event)" aria-label="Change avatar">
+                        <i class="fa-solid fa-camera"></i>
+                    </button>
+                    <input id="up-avatar-file" type="file" accept="image/*" style="display:none" onchange="handleProfileGalleryImage(event)">
+                </div>
+
+                <div id="avatar-picker-panel" class="up-avatar-panel">
+                    <div class="up-avatar-panel-title" id="up-avatar-panel-title">انتخاب تصویر پروفایل / Choose avatar</div>
+                    <div class="up-avatar-actions">
+                        <button type="button" class="up-avatar-action" onclick="triggerProfileGallery(event)">
+                            <i class="fa-solid fa-image"></i>
+                            <span id="up-gallery-label">انتخاب از گالری / Gallery</span>
+                        </button>
+                        <button type="button" class="up-avatar-action" onclick="showPresetAvatars(event)">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span id="up-presets-label">آواتارهای آماده / Presets</span>
+                        </button>
+                    </div>
+                    <div id="up-avatar-grid" class="up-avatar-grid-modern"></div>
+                </div>
+
+                <label class="up-field-label" id="up-name-label" for="up-name-input">نام / Name</label>
+                <input type="text" class="up-name-input up-modern-input" id="up-name-input" placeholder="اسمت رو بنویس... / Your name..." autocomplete="name">
+
+                <div class="up-modern-section">
+                    <div class="up-section-title" id="up-choose-text">جنسیت / Gender</div>
+                    <div id="up-gender-select" class="up-gender-modern">
+                        <button id="gender-male" type="button" onclick="selectGender('male')" class="up-gender-chip">
+                            <i class="fa-solid fa-mars"></i>
+                            <span id="gender-male-label">مرد / Male</span>
+                        </button>
+                        <button id="gender-female" type="button" onclick="selectGender('female')" class="up-gender-chip">
+                            <i class="fa-solid fa-venus"></i>
+                            <span id="gender-female-label">زن / Female</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="up-age-card">
+                    <div class="up-age-row">
+                        <div>
+                            <div class="up-section-title" id="up-age-label">سن / Age</div>
+                            <div class="up-age-hint" id="up-age-hint">سن را وارد کن یا نوار را حرکت بده / Type or slide</div>
+                        </div>
+                        <input id="up-age-display" class="up-age-number" type="number" min="3" max="99" value="25" inputmode="numeric"
+                            oninput="syncAgeFromInput(this.value)" aria-label="Age">
+                    </div>
+                    <input type="range" id="up-age-slider" min="3" max="99" value="25" step="1" oninput="syncAgeFromRange(this.value)" class="up-age-slider">
+                    <div class="up-age-scale">
+                        <span>3</span><span>50</span><span>99</span>
+                    </div>
+                </div>
+
+                <button class="up-save-btn up-modern-save" id="up-save-btn" type="button" onclick="saveUserProfile()">ذخیره / Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================== BROADCAST MODAL =================== -->
+    <div id="broadcast-modal" onclick="closeBroadcastModal(event)">
+        <div class="broadcast-sheet">
+            <div class="broadcast-sheet-title" id="bc-title-text">📡 پخش روی نمایشگر / Cast to Screen</div>
+            <div class="broadcast-sheet-sub" id="bc-sub-text">یک روش پخش انتخاب کن</div>
+            <div class="broadcast-wifi-note">
+                <i class="fa-solid fa-wifi"></i>
+                <span id="bc-wifi-note">برای پخش Wi-Fi، مطمئن شو هر دو دستگاه به یک شبکه وصل هستند</span>
+            </div>
+            <div class="broadcast-options">
+                <div class="broadcast-opt" onclick="doCast('airplay')">
+                    <div class="broadcast-opt-icon">📱</div>
+                    <div class="broadcast-opt-label">AirPlay</div>
+                    <div class="broadcast-opt-sub" id="bc-ap-sub">iOS / macOS</div>
+                </div>
+                <div class="broadcast-opt" onclick="doCast('chromecast')">
+                    <div class="broadcast-opt-icon" style="display:flex;align-items:center;justify-content:center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28" height="28">
+                            <path d="M1 18v3h3c0-1.66-1.34-3-3-3zm0-4v2c2.76 0 5 2.24 5 5h2c0-3.87-3.13-7-7-7zm18-7H5c-1.1 0-2 .9-2 2v3h2v-3h14v12h-5v2h5c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-18 11c0 .55.45 1 1 1s1-.45 1-1-.45-1-1-1-1 .45-1 1z"/>
+                        </svg>
+                    </div>
+                    <div class="broadcast-opt-label">Chromecast</div>
+                    <div class="broadcast-opt-sub" id="bc-cc-sub">Google Cast</div>
+                </div>
+                <div class="broadcast-opt" onclick="doCast('miracast')">
+                    <div class="broadcast-opt-icon">🖥️</div>
+                    <div class="broadcast-opt-label">Miracast</div>
+                    <div class="broadcast-opt-sub" id="bc-mc-sub">Wi-Fi Direct</div>
+                </div>
+                <div class="broadcast-opt" onclick="doCast('bluetooth')">
+                    <div class="broadcast-opt-icon">🔵</div>
+                    <div class="broadcast-opt-label">Bluetooth</div>
+                    <div class="broadcast-opt-sub" id="bc-bt-sub">Audio Output</div>
+                </div>
+                <div class="broadcast-opt" onclick="doCast('dlna')">
+                    <div class="broadcast-opt-icon">📡</div>
+                    <div class="broadcast-opt-label">DLNA</div>
+                    <div class="broadcast-opt-sub" id="bc-dlna-sub">Smart TV</div>
+                </div>
+                <div class="broadcast-opt" onclick="doCast('pip')">
+                    <div class="broadcast-opt-icon">🪟</div>
+                    <div class="broadcast-opt-label">Picture-in-Picture</div>
+                    <div class="broadcast-opt-sub" id="bc-pip-sub">PiP Mode</div>
+                </div>
+            </div>
+            <button class="broadcast-close" onclick="document.getElementById('broadcast-modal').style.display='none'" id="bc-close-text">بستن / Close</button>
+        </div>
+    </div>
+
+    <!-- SCROLL PROGRESS BAR -->
+    <div id="scroll-progress-bar"></div>
+    
+    <!-- NETWORK INDICATOR -->
+    <div id="network-indicator">
+        <i class="fa-solid fa-wifi-slash"></i> 
+        <span id="network-txt">آفلاین هستید — نتایج کش‌شده نمایش داده می‌شود</span>
+    </div>
+    
+    <!-- PULL TO REFRESH -->
+    <div id="pull-to-refresh">
+        <i class="fa-solid fa-rotate-right"></i> 
+        <span>رفرش...</span>
+    </div>
+    
+    <!-- CINEMATIC AMBIENT GLOW -->
+    <div id="cinematic-glow"></div>
+    
+    <!-- COMPARE MODAL -->
+    <div id="compare-modal">
+        <div class="compare-header">
+            <span class="compare-title" id="compare-modal-title">⚖️ مقایسه دو اثر</span>
+            <div style="width:36px;height:36px;background:#333;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="document.getElementById('compare-modal').classList.remove('open')">
+                <i class="fa-solid fa-times" style="color:white;"></i>
+            </div>
+        </div>
+        <div id="compare-content" class="compare-grid"></div>
+    </div>
+
+    <!-- COMPARE PICKER (search & select second title) -->
+    <div id="compare-picker" style="position:fixed;inset:0;z-index:920;display:none;align-items:flex-end;justify-content:center;background:rgba(0,0,0,0.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);" onclick="if(event.target===this) closeComparePicker()">
+        <div style="background:#141414;width:100%;max-width:600px;border-radius:18px 18px 0 0;padding:16px 16px 10px;max-height:82vh;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                <span id="cmp-picker-title" style="font-weight:800;color:#fff;font-size:15px;"><i class="fa-solid fa-code-compare" style="color:var(--primary,#E50914);margin-left:6px;"></i>انتخاب اثر دوم برای مقایسه</span>
+                <i class="fa-solid fa-times" style="color:#aaa;cursor:pointer;font-size:20px;" onclick="closeComparePicker()"></i>
+            </div>
+            <div style="display:flex;align-items:center;background:#1e1e1e;border:1.5px solid #333;border-radius:14px;overflow:hidden;flex-shrink:0;">
+                <i class="fa-solid fa-search" style="color:#666;font-size:15px;padding:0 12px;"></i>
+                <input type="text" id="cmp-picker-input" oninput="doCompareSearch(this.value)" autocomplete="off" placeholder="..." style="flex:1;background:transparent;border:none;padding:12px 0;color:white;font-size:14px;outline:none;font-family:'Vazirmatn',sans-serif;">
+            </div>
+            <div id="cmp-picker-results" style="overflow-y:auto;margin-top:12px;flex:1;display:flex;flex-direction:column;gap:8px;"></div>
+        </div>
+    </div>
+
+    <!-- CLEAR HISTORY CONFIRM DIALOG -->
+    <div id="clear-history-confirm" style="position:fixed;inset:0;z-index:930;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.65);" onclick="if(event.target===this) closeClearHistoryConfirm()">
+        <div style="background:#181818;width:88%;max-width:340px;border-radius:16px;padding:22px 18px;text-align:center;">
+            <i class="fa-solid fa-trash-can" style="font-size:28px;color:var(--primary,#E50914);margin-bottom:12px;"></i>
+            <div id="clear-history-confirm-text" style="color:#fff;font-size:14px;font-weight:700;margin-bottom:18px;line-height:1.6;"></div>
+            <div style="display:flex;gap:10px;">
+                <button id="clear-history-confirm-no" onclick="closeClearHistoryConfirm()" style="flex:1;padding:11px;border-radius:10px;border:1px solid #333;background:#222;color:#ddd;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;"></button>
+                <button id="clear-history-confirm-yes" onclick="confirmClearHistory()" style="flex:1;padding:11px;border-radius:10px;border:none;background:var(--primary,#E50914);color:#fff;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAMILY NIGHT EXPLORE -->
+    <div id="explore-page">
+        <div class="explore-header">
+            <i class="fa-solid fa-arrow-left" onclick="closeExplorePage()"></i>
+            <span class="explore-header-title">FAMILY NIGHT Explore</span>
+            <i class="fa-solid fa-magnifying-glass" onclick="toggleExploreSearch()"></i>
+        </div>
+        <div id="explore-search-bar">
+            <input type="text" id="explore-search-input" placeholder="Search a movie or show..." onkeydown="if(event.key==='Enter') runExploreSearch()">
+            <i class="fa-solid fa-xmark" onclick="clearExploreSearch()"></i>
+        </div>
+        <div class="explore-tabs">
+            <div class="explore-tab active" id="explore-tab-feed" onclick="switchExploreTab('feed')"><span id="explore-tab-feed-txt">Explore</span></div>
+            <div class="explore-tab" id="explore-tab-saved" onclick="switchExploreTab('saved')"><span id="explore-tab-saved-txt">Saved</span></div>
+            <div class="explore-tab" id="explore-tab-liked" onclick="switchExploreTab('liked')"><span id="explore-tab-liked-txt">Liked</span></div>
+        </div>
+        <div id="explore-scroll-area">
+            <div id="explore-pull-indicator"><i class="fa-solid fa-clapperboard fa-spin"></i></div>
+            <div id="explore-grid" class="explore-grid"></div>
+            <div id="explore-saved-grid" class="explore-grid" style="display:none;"></div>
+            <div id="explore-liked-grid" class="explore-grid" style="display:none;"></div>
+            <div id="explore-status" style="text-align:center;color:#888;font-size:12px;padding:24px;"></div>
+        </div>
+    </div>
+
+    <!-- EXPLORE PLAYER (Reels-style) -->
+    <div id="explore-player">
+        <div id="explore-player-media"></div>
+        <div id="explore-tap-layer" onclick="handleExploreTap(event)"></div>
+        <div id="explore-center-icon"><i class="fa-solid fa-play"></i></div>
+        <div id="explore-heart-burst"><i class="fa-solid fa-heart"></i></div>
+        <div class="explore-player-topbar">
+            <i class="fa-solid fa-xmark" onclick="closeExplorePlayer()"></i>
+            <i class="fa-solid fa-volume-high" id="explore-mute-icon" onclick="event.stopPropagation();toggleExploreMute()"></i>
+        </div>
+        <div class="explore-player-sidebar">
+            <div class="epb-avatar"><img id="explore-player-avatar" src=""></div>
+            <div class="epb-action" onclick="event.stopPropagation();toggleExploreLike()">
+                <i class="fa-regular fa-heart" id="explore-like-icon"></i>
+                <span id="explore-like-count">0</span>
+            </div>
+            <div class="epb-action" onclick="event.stopPropagation();toggleExploreSave()">
+                <i class="fa-regular fa-bookmark" id="explore-save-icon"></i>
+                <span id="explore-save-txt">Save</span>
+            </div>
+            <div class="epb-action" onclick="event.stopPropagation();shareExploreItem()">
+                <i class="fa-solid fa-share"></i>
+                <span id="explore-share-txt">Share</span>
+            </div>
+        </div>
+        <div class="explore-player-caption">
+            <div class="epc-channel" id="explore-player-channel"></div>
+            <div class="epc-caption" id="explore-player-caption"></div>
+            <div class="epc-views" id="explore-player-views"></div>
+        </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar-overlay" id="sb-overlay" onclick="toggleMenu()"></div>
+    <div id="sidebar">
+        <div class="sb-header">
+            <span class="sb-title">Menu</span>
+            <i class="fa-solid fa-times" style="color:white; cursor:pointer; font-size:20px;" onclick="toggleMenu()"></i>
+        </div>
+        <!-- PROFILE IN SIDEBAR -->
+        <div class="sb-profile-section" onclick="openProfileModal(); toggleMenu();" id="sb-profile-section">
+            <div class="sb-profile-img" id="sb-avatar-container">👤</div>
+            <div class="sb-profile-info">
+                <div class="sb-profile-name" id="sb-profile-name-text">Guest User</div>
+                <div class="sb-profile-sub" id="sb-profile-sub-text">تنظیم پروفایل / Set Profile</div>
+            </div>
+            <i class="fa-solid fa-pen" style="color:#666;font-size:12px;"></i>
+        </div>
+        <div class="sb-item" onclick="openGenericGrid('movie', 'movie/top_rated?vote_count.gte=1000', document.getElementById('sb-top250movies').innerText); toggleMenu()">
+            <span><i class="fa-solid fa-film" style="width:20px;"></i> <span id="sb-top250movies">Top 250 Movies</span></span>
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="sb-item" onclick="openGenericGrid('tv', 'tv/top_rated?vote_count.gte=1000', document.getElementById('sb-top250series').innerText); toggleMenu()">
+            <span><i class="fa-solid fa-tv" style="width:20px;"></i> <span id="sb-top250series">Top 250 Series</span></span>
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="sb-item" onclick="openGenericGrid('tv', 'discover/tv?with_type=2&sort_by=vote_average.desc&vote_count.gte=100', 'Mini Series'); toggleMenu()">
+            <span><i class="fa-solid fa-video" style="width:20px;"></i> <span id="sb-miniseries">Mini Series</span></span>
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="sb-item" onclick="openPublicDomainPage(); toggleMenu()">
+            <span><i class="fa-solid fa-cloud-arrow-down" style="width:20px;"></i> <span id="sb-pd-free">دانلود رایگان (کپی‌رایت‌آزاد)</span></span>
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="sb-item" onclick="switchTab('settings'); toggleMenu()">
+            <span><i class="fa-solid fa-gear" style="width:20px;"></i> <span id="sb-settings">تنظیمات</span></span>
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="sb-item" onclick="toggleMenuCategory()">
+            <span><i class="fa-solid fa-list" style="width:20px;"></i> <span id="sb-categories">Categories</span></span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div id="sb-cats" class="sb-sub-list"></div>
+        <div class="sb-item" onclick="toggleMenuCountries()">
+            <span><i class="fa-solid fa-flag" style="width:20px;"></i> <span id="sb-countries">Countries</span></span>
+
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div id="sb-countries-list" class="sb-sub-list"></div>
+    </div>
+
+    <div id="app">
+        <div id="home-tab" class="tab-content active">
+            <header>
+                <div class="fn-brand-wrap">
+                    <div class="profile-header-avatar" id="header-avatar-btn" onclick="openProfileModal()" title="Profile"><span id="header-avatar-icon">👤</span></div>
+                    <span class="logo fn-cinematic-logo">Family Night</span>
+                </div>
+                <!-- DOM is left-to-right; visual order from right is: sidebar, settings, fullscreen, calendar, Watch Party, language. -->
+                <div class="fn-header-controls">
+                    <div onclick="toggleLang()" title="Change Language" id="lang-toggle-btn"><span id="lang-toggle-icon">EN</span></div>
+                    <button type="button" id="fn-watch-party-header-btn" onclick="FNWatchParty.openHub()" title="Watch Party" aria-label="Watch Party"><i class="fa-solid fa-users"></i></button><button type="button" id="fn-live-header-btn" class="fn-live-header-btn" onclick="switchTab('live', this)" title="Live TV" aria-label="Live TV"><i class="fa-solid fa-tv"></i><b>LIVE</b></button>
+                    <i class="fa-solid fa-calendar-days" id="fn-calendar-header-btn" onclick="openReleaseCalendar()" title="Release calendar / تقویم انتشار" aria-label="Release calendar"></i>
+                    <i class="fa-solid fa-expand" id="app-fs-btn" onclick="toggleAppFullscreen()" title="Fullscreen"></i>
+                    <i class="fa-solid fa-gear" id="fn-settings-header-btn" onclick="switchTab('settings')" title="Settings"></i>
+                    <i class="fa-solid fa-bars menu-trigger" onclick="toggleMenu()" title="Menu"></i>
+                </div>
+            </header>
+            
+            <!-- (Old "Don't know what movie to watch" box removed — now a floating button, see #fab-pick-movie) -->
+            
+            <!-- MOOD PICKER -->
+            <div class="mood-section fn-mood-drawer" id="mood-section">
+                <button type="button" class="mood-title fn-mood-toggle" id="mood-toggle" onclick="toggleMoodPanel()" aria-expanded="false" aria-controls="mood-panel"><span id="txt-mood-title">🎭 What's your mood tonight?</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+                <div class="fn-mood-panel" id="mood-panel"><div class="fn-mood-panel-inner"><div class="mood-row">
+                    <div class="mood-btn" style="--mood-color:rgba(255,200,0,0.2)" onclick="pickMood('comedy', '35')">
+                        <div class="mood-icon"><i class="fa-solid fa-masks-theater" style="color:#ffc400;"></i></div>
+                        <span class="mood-label" id="ml-com">Comedy</span>
+                    </div>
+                    <div class="mood-btn" style="--mood-color:rgba(150,0,255,0.2)" onclick="pickMood('horror', '27')">
+                        <div class="mood-icon"><i class="fa-solid fa-skull" style="color:#9b59b6;"></i></div>
+                        <span class="mood-label" id="ml-hor">Horror</span>
+                    </div>
+                    <div class="mood-btn" style="--mood-color:rgba(0,150,255,0.2)" onclick="pickMood('drama', '18')">
+                        <div class="mood-icon"><i class="fa-solid fa-heart-crack" style="color:#3498db;"></i></div>
+                        <span class="mood-label" id="ml-dra">Drama</span>
+                    </div>
+                    <div class="mood-btn" style="--mood-color:rgba(255,60,0,0.2)" onclick="pickMood('action', '28')">
+                        <div class="mood-icon"><i class="fa-solid fa-bolt" style="color:#e74c3c;"></i></div>
+                        <span class="mood-label" id="ml-act">Action</span>
+                    </div>
+                    <div class="mood-btn" style="--mood-color:rgba(255,100,150,0.2)" onclick="pickMood('romance', '10749')">
+                        <div class="mood-icon"><i class="fa-solid fa-heart" style="color:#e91e8c;"></i></div>
+                        <span class="mood-label" id="ml-rom">Romance</span>
+                    </div>
+                    <div class="mood-btn" style="--mood-color:rgba(0,200,100,0.2)" onclick="pickMood('documentary', '99')">
+                        <div class="mood-icon"><i class="fa-solid fa-earth-americas" style="color:#27ae60;"></i></div>
+                        <span class="mood-label" id="ml-doc">Doc</span>
+                    </div>
+                </div>
+                <div class="mood-results" id="mood-results">
+                    <div class="mood-results-title" id="mood-results-title">✨ Our Picks</div>
+                    <div class="row-scroll" id="mood-row"></div>
+                </div></div></div>
+            </div>
+            
+            <div id="home-content" style="padding-top:0;"></div>
+
+            <!-- QUOTE OF THE DAY -->
+            <div class="qotd-section" id="qotd-section">
+                <div class="qotd-bg" id="qotd-bg"></div>
+                <div class="qotd-overlay"></div>
+                <div class="qotd-content">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+                        <div class="qotd-label" id="qotd-label">🎬 دیالوگ روز</div>
+                        <div style="display:flex;gap:6px;align-items:center;">
+                            <span onclick="translateQOTD()" id="qotd-translate-btn" class="qotd-action-btn" style="display:none;">
+                                <span>🌐</span><span id="qotd-translate-label">فارسی</span>
+                            </span>
+                            <span onclick="event.stopPropagation();refreshQOTD()" class="qotd-action-btn" title="New quote">
+                                <i class="fa-solid fa-rotate-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="qotd-text" id="qotd-text" onclick="openQOTDDetail()" style="cursor:pointer;" dir="auto">در حال بارگذاری...</div>
+                    <div id="qotd-fa-text" style="display:none;font-size:13px;color:var(--gold,#ffd700);margin-top:6px;font-family:'Vazirmatn',sans-serif;line-height:1.75;direction:rtl;cursor:pointer;" onclick="openQOTDDetail()"></div>
+                    <div class="qotd-source" id="qotd-source" onclick="openQOTDDetail()" style="cursor:pointer;margin-top:8px;"></div>
+                    <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;">
+                        <span onclick="copyQOTD()" id="qotd-copy-btn" class="qotd-action-btn">
+                            <i class="fa-solid fa-copy"></i><span id="qotd-copy-label">Copy</span>
+                        </span>
+                        <span onclick="shareQOTD()" id="qotd-share-btn" class="qotd-action-btn">
+                            <i class="fa-solid fa-share-nodes"></i><span id="qotd-share-label">Share</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div style="height:70px;"></div>
+        </div>
+        <div id="live-tab" class="tab-content">
+            <header><div class="fn-live-title"><i class="fa-solid fa-tv"></i><div><span id="fn-live-title-text">پخش زنده</span><small id="fn-live-subtitle">Live TV</small></div></div><div class="fn-live-top-actions"><button class="fn-live-icon-btn" onclick="fnLiveRequestExit()" title="Back" aria-label="Back"><i class="fa-solid fa-arrow-right"></i></button><button class="fn-live-icon-btn" onclick="fnLiveAppFullscreen()" title="Fullscreen app" aria-label="Fullscreen app"><i class="fa-solid fa-expand"></i></button><button id="fn-live-fav-toggle" class="fn-live-icon-btn" onclick="fnLiveToggleFavorites()" title="Favorites" aria-label="Favorites"><i class="fa-solid fa-star"></i></button><button class="fn-live-icon-btn" onclick="fnLiveRequestExit()" title="Close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button></div></header>
+            <main class="fn-live-shell"><section id="fn-live-player" class="fn-live-player" aria-live="polite"><div class="fn-live-player-topbar"><button class="fn-live-fs-top" onclick="fnLiveFullscreen()" aria-label="Fullscreen"><i class="fa-solid fa-expand"></i> <span data-live-t="fullscreen">تمام‌صفحه</span></button></div><div class="fn-live-video-wrap"><video id="fn-live-video" class="fn-live-video" controls playsinline preload="metadata"></video></div><div class="fn-live-player-bar"><button class="fn-live-nav-btn" onclick="fnLivePrev()" aria-label="Previous channel" title="Previous"><i class="fa-solid fa-backward-step"></i></button><button class="fn-live-nav-btn" onclick="fnLiveStop()" aria-label="Stop" title="Stop"><i class="fa-solid fa-stop"></i></button><button class="fn-live-nav-btn" onclick="fnLiveNext()" aria-label="Next channel" title="Next"><i class="fa-solid fa-forward-step"></i></button><button class="fn-live-close" onclick="fnLiveClosePlayer()" aria-label="Close"><i class="fa-solid fa-xmark"></i></button><div id="fn-live-now" class="fn-live-now"></div><span id="fn-live-state" class="fn-live-state"></span><button class="fn-live-close" onclick="fnLiveFullscreen()" aria-label="Fullscreen"><i class="fa-solid fa-expand"></i></button></div><div id="fn-live-error" class="fn-live-error"></div></section><details id="fn-live-epg" class="fn-live-epg" aria-label="EPG" hidden><summary><span class="fn-live-epg-summary-icon"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></span><span data-live-epg-label="title">راهنمای برنامه</span><span class="fn-live-epg-summary-channel" id="fn-live-epg-channel"></span><i class="fa-solid fa-chevron-down fn-live-epg-chevron" aria-hidden="true"></i></summary><div class="fn-live-epg-body" id="fn-live-epg-body"><div class="fn-live-epg-status" id="fn-live-epg-status">یک شبکه را برای دریافت راهنمای برنامه پخش کنید</div><div class="fn-live-epg-list" id="fn-live-epg-list"></div></div></details>
+                <div class="fn-live-filters">
+                    <div class="fn-live-filter-field"><label data-fa="جستجو" data-en="Search">جستجو</label><input id="fn-live-search" class="fn-live-input" type="search" placeholder="جستجوی شبکه..." oninput="fnLiveApply()"></div>
+                    <div class="fn-live-filter-field"><label data-fa="موضوعات" data-en="Topics">موضوعات</label><select id="fn-live-topic" class="fn-live-select" onchange="fnLiveApply()"></select></div>
+                    <div class="fn-live-filter-field"><label data-fa="کشورها" data-en="Countries">کشورها</label><select id="fn-live-country" class="fn-live-select" onchange="fnLiveApply()"></select></div>
+                    <div class="fn-live-filter-field"><label data-fa="زبان‌ها" data-en="Languages">زبان‌ها</label><select id="fn-live-language" class="fn-live-select" onchange="fnLiveApply()"></select></div>
+                    <div class="fn-live-filter-field"><label data-fa="مرتب‌سازی" data-en="Sort">مرتب‌سازی</label><select id="fn-live-sort" class="fn-live-select" onchange="fnLiveApply()"></select></div>
+                </div>
+                <div class="fn-live-meta"><span id="fn-live-count">در حال بارگذاری...</span><span class="fn-live-status"><i id="fn-live-dot" class="fn-live-dot loading"></i><span id="fn-live-status-text">در حال دریافت شبکه‌ها...</span></span></div><div id="fn-live-grid" class="fn-live-grid"><div id="fn-live-loading-screen" class="fn-live-loading-screen"><div class="fn-live-loading-inner"><div class="fn-live-loading-logo"><i class="fa-solid fa-tv"></i></div><div class="fn-live-loading-live">LIVE</div><div class="fn-live-loading-text">در حال آماده‌سازی شبکه‌ها…</div><div class="fn-live-loading-sub">لطفاً تا تکمیل دریافت فهرست صبر کنید</div></div></div></div><button id="fn-live-more" class="fn-live-more" onclick="fnLiveMore()"></button>
+            </main>
+        </div>
+        <div id="movies-tab" class="tab-content">
+            <header>
+                <span class="logo" id="txt-mov-head">Movies</span>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <div class="profile-header-avatar" onclick="openProfileModal()" title="Profile"><span id="mov-avatar-icon">👤</span></div>
+                    <div class="fn-lang-mini" onclick="toggleLang()" title="Change Language"><span class="fn-lang-mini-text">EN</span></div>
+                    </span> <i class="fa-solid fa-gear" onclick="switchTab('settings')" style="font-size:20px;color:#aaa;cursor:pointer;" title="Settings"></i> <i class="fa-solid fa-expand" onclick="toggleAppFullscreen()" style="font-size:20px;color:#aaa;cursor:pointer;" title="Fullscreen"></i>
+                    <i class="fa-solid fa-bars menu-trigger" onclick="toggleMenu()" title="Menu"></i>
+                </div>
+            </header>
+            <div class="filter-bar">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <span class="filter-label" id="lbl-m-sort">Sort By</span>
+                        <select class="filter-select" id="m-sort" onchange="updateDiscovery('movie')"></select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label" id="lbl-m-genre">Genres</span>
+                        <select class="filter-select" id="m-genre" onchange="updateDiscovery('movie')"></select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label" id="lbl-m-year">Years</span>
+                        <select class="filter-select" id="m-year" onchange="updateDiscovery('movie')"></select>
+                    </div>
+                </div>
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <span class="filter-label" id="lbl-m-country">Countries</span>
+                        <div class="custom-country-select" id="m-country-wrapper">
+                            <div class="custom-country-btn" id="m-country-btn" onclick="toggleCountryDropdown('m')">
+                                <span id="m-country-display">— All —</span>
+                            </div>
+                            <div class="custom-country-dropdown" id="m-country-dropdown"></div>
+                        </div>
+                        <select class="filter-select" id="m-country" style="display:none;" onchange="updateDiscovery('movie')"></select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label" id="lbl-m-letter">Letters & Numbers</span>
+                        <select class="filter-select" id="m-letter" onchange="updateDiscovery('movie')"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container" id="movies-grid"></div>
+            <div class="load-more-btn" id="btn-more-m" onclick="loadMoreDiscovery('movie')">More</div>
+            <div style="height:70px;"></div>
+        </div>
+        <div id="series-tab" class="tab-content">
+            <header>
+                <span class="logo" id="txt-ser-head">Series</span>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <div class="profile-header-avatar" onclick="openProfileModal()" title="Profile"><span>👤</span></div>
+                    <div class="fn-lang-mini" onclick="toggleLang()" title="Change Language"><span class="fn-lang-mini-text">EN</span></div>
+                    </span> <i class="fa-solid fa-gear" onclick="switchTab('settings')" style="font-size:20px;color:#aaa;cursor:pointer;" title="Settings"></i> <i class="fa-solid fa-expand" onclick="toggleAppFullscreen()" style="font-size:20px;color:#aaa;cursor:pointer;" title="Fullscreen"></i>
+                    <i class="fa-solid fa-bars menu-trigger" onclick="toggleMenu()" title="Menu"></i>
+                </div>
+            </header>
+            <div class="filter-bar">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <span class="filter-label" id="lbl-s-sort">Sort By</span>
+                        <select class="filter-select" id="s-sort" onchange="updateDiscovery('tv')"></select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label" id="lbl-s-genre">Genres</span>
+                        <select class="filter-select" id="s-genre" onchange="updateDiscovery('tv')"></select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label" id="lbl-s-year">Years</span>
+                        <select class="filter-select" id="s-year" onchange="updateDiscovery('tv')"></select>
+                    </div>
+                </div>
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <span class="filter-label" id="lbl-s-country">Countries</span>
+                        <div class="custom-country-select" id="s-country-wrapper">
+                            <div class="custom-country-btn" id="s-country-btn" onclick="toggleCountryDropdown('s')">
+                                <span id="s-country-display">— All —</span>
+                            </div>
+                            <div class="custom-country-dropdown" id="s-country-dropdown"></div>
+                        </div>
+                        <select class="filter-select" id="s-country" style="display:none;" onchange="updateDiscovery('tv')"></select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label" id="lbl-s-letter">Letters & Numbers</span>
+                        <select class="filter-select" id="s-letter" onchange="updateDiscovery('tv')"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container" id="series-grid"></div>
+            <div class="load-more-btn" id="btn-more-s" onclick="loadMoreDiscovery('tv')">More</div>
+            <div style="height:70px;"></div>
+        </div>
+        <div id="search-tab" class="tab-content">
+            <header>
+                <span class="logo" id="txt-search-head">Search</span>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <div class="profile-header-avatar" onclick="openProfileModal()" title="Profile"><span>👤</span></div>
+                    <div class="fn-lang-mini" onclick="toggleLang()" title="Change Language"><span class="fn-lang-mini-text">EN</span></div>
+                    </span> <i class="fa-solid fa-gear" onclick="switchTab('settings')" style="font-size:20px;color:#aaa;cursor:pointer;" title="Settings"></i> <i class="fa-solid fa-expand" onclick="toggleAppFullscreen()" style="font-size:20px;color:#aaa;cursor:pointer;" title="Fullscreen"></i>
+                    <i class="fa-solid fa-bars menu-trigger" onclick="toggleMenu()" title="Menu"></i>
+                </div>
+            </header>
+            <div class="search-container">
+                <!-- Modern Search Bar -->
+                <div id="modern-search-wrap" style="position:relative;padding:12px 15px 0;">
+                    <!-- Search type tabs -->
+                    <div style="display:flex;gap:6px;margin-bottom:10px;overflow-x:auto;padding-bottom:2px;" id="search-type-tabs">
+                        <button onclick="setSearchType('all',this)" id="stype-all" style="padding:6px 14px;border-radius:20px;border:1px solid rgba(229,9,20,0.6);background:var(--primary);color:white;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:inherit;flex-shrink:0;">All</button>
+                        <button onclick="setSearchType('movie',this)" id="stype-movie" style="padding:6px 14px;border-radius:20px;border:1px solid #333;background:#1a1a1a;color:#aaa;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:inherit;flex-shrink:0;">🎬 Movies</button>
+                        <button onclick="setSearchType('tv',this)" id="stype-tv" style="padding:6px 14px;border-radius:20px;border:1px solid #333;background:#1a1a1a;color:#aaa;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:inherit;flex-shrink:0;">📺 Series</button>
+                        <button onclick="setSearchType('person',this)" id="stype-person" style="padding:6px 14px;border-radius:20px;border:1px solid #333;background:#1a1a1a;color:#aaa;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:inherit;flex-shrink:0;">👤 People</button>
+                    </div>
+                    <!-- Search input with live dropdown -->
+                    <div style="position:relative;">
+                        <div style="display:flex;align-items:center;background:#1e1e1e;border:1.5px solid #333;border-radius:14px;overflow:hidden;transition:border-color 0.2s;" id="search-input-wrap">
+                            <i class="fa-solid fa-search" style="color:#666;font-size:16px;padding:0 12px 0 14px;flex-shrink:0;"></i>
+                            <input type="text" class="search-inp" id="search-input" placeholder="..." 
+                                   oninput="doModernSearch(this.value)" 
+                                   onfocus="this.parentElement.parentElement.style.borderColor='#E50914';showSearchDropdown()" 
+                                   onblur="this.parentElement.parentElement.style.borderColor='#333';hideSearchDropdownDelayed()"
+                                   autocomplete="off"
+                                   style="flex:1;background:transparent;border:none;padding:13px 0;color:white;font-size:14px;outline:none;font-family:'Vazirmatn',sans-serif;">
+                            <div id="search-clear-btn" onclick="clearModernSearch()" style="display:none;padding:0 14px;color:#666;cursor:pointer;font-size:18px;">✕</div>
+                        </div>
+                        <!-- Live dropdown -->
+                        <div id="search-live-dropdown" style="display:none;position:absolute;top:calc(100% + 6px);left:0;right:0;background:#1a1a1a;border:1px solid #2d2d2d;border-radius:14px;z-index:9999;max-height:75vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,0.8);">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Search History Dropdown (old - kept for compatibility) -->
+                <div id="search-history-dropdown" style="display:none;">
+                    <!-- Filled by JS -->
+                </div>
+                
+                <!-- Search Results Section (shown after search for grid view) -->
+                <div id="search-results-section" style="display:none;">
+                    <div class="section">
+                        <div class="sec-head">
+                            <span class="sec-title"><i class="fa-solid fa-search"></i> <span id="txt-search-results">Search Results</span></span>
+                        </div>
+                        <div class="grid-container" id="search-results"></div>
+                        <div id="search-message" class="search-message" style="display:none;"></div>
+                    </div>
+                </div>
+                
+                <!-- Default Sections (shown when no search) -->
+                <div id="default-sections">
+                    <div class="section">
+                        <div class="sec-head">
+                            <span class="sec-title" id="txt-male-trend">Cinema Legends (Male)</span>
+                            <span class="sec-more" id="txt-male-see-all" onclick="openGenericGrid('actor_male_list', 'person/popular?sort_by=popularity.desc&gender=2', document.getElementById('txt-male-trend').innerText)">
+                                مشاهده همه
+                            </span>
+                        </div>
+                        <div class="row-scroll" id="trend-male"></div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="sec-head">
+                            <span class="sec-title" id="txt-female-trend">Cinema Legends (Female)</span>
+                            <span class="sec-more" id="txt-female-see-all" onclick="openGenericGrid('actor_female_list', 'person/popular?sort_by=popularity.desc&gender=1', document.getElementById('txt-female-trend').innerText)">
+                                مشاهده همه
+                            </span>
+                        </div>
+                        <div class="row-scroll" id="trend-female"></div>
+                    </div>
+                    <div class="section">
+                        <div class="sec-head">
+                            <span class="sec-title" id="txt-director-trend">Major Directors</span>
+                            <span class="sec-more" id="txt-director-see-all" onclick="openGenericGrid('director_list', 'person/popular?sort_by=popularity.desc&known_for_department=Directing', document.getElementById('txt-director-trend').innerText)">
+                                مشاهده همه
+                            </span>
+                        </div>
+                        <div class="row-scroll" id="trend-director"></div>
+                    </div>
+                    
+                    <!-- COMPANIES SECTION -->
+                    <div class="section">
+                        <div class="sec-head">
+                            <span class="sec-title" id="txt-companies-trend">Studios &amp; Networks</span>
+                            <span class="sec-more" id="txt-companies-see-all" onclick="openCompaniesAll()">مشاهده همه</span>
+                        </div>
+                        <div class="row-scroll" id="trend-companies"></div>
+                    </div>
+
+                    <!-- COLLECTIONS SECTION -->
+                    <div class="section">
+                        <div class="sec-head">
+                            <span class="sec-title" id="txt-collections-trend">Collections</span>
+                            <span class="sec-more" onclick="openAllCollectionsPage()" id="txt-collections-all">مشاهده همه</span>
+                        </div>
+                        <div class="row-scroll" id="trend-collections"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="height:70px;"></div>
+        </div>
+        <div id="fav-tab" class="tab-content">
+            <header>
+                <span class="logo" id="txt-fav-head">My List</span>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <div class="profile-header-avatar" onclick="openProfileModal()" title="Profile"><span>👤</span></div>
+                    <div class="fn-lang-mini" onclick="toggleLang()" title="Change Language"><span class="fn-lang-mini-text">EN</span></div>
+                    </span> <i class="fa-solid fa-gear" onclick="switchTab('settings')" style="font-size:20px;color:#aaa;cursor:pointer;" title="Settings"></i> <i class="fa-solid fa-expand" onclick="toggleAppFullscreen()" style="font-size:20px;color:#aaa;cursor:pointer;" title="Fullscreen"></i>
+                    <i class="fa-solid fa-bars menu-trigger" onclick="toggleMenu()" title="Menu"></i>
+                </div>
+            </header>
+            <!-- ACTION BUTTONS -->
+            <div class="watchlist-actions">
+                <button class="watchlist-action-btn" onclick="exportWatchlist()">
+                    <i class="fa-solid fa-file-export"></i> <span id="txt-export">JSON Export</span>
+                </button>
+                <button class="watchlist-action-btn" onclick="shareWatchlist()">
+                    <i class="fa-brands fa-telegram"></i> <span id="txt-share-list">Share</span>
+                </button>
+                <button class="watchlist-action-btn" onclick="openBadges()">
+                    <i class="fa-solid fa-medal"></i> <span id="txt-badges">Achievements</span>
+                </button>
+            </div>
+
+            <!-- SECTION TABS -->
+            <div style="display:flex;gap:0;margin:0 12px 16px;border-radius:12px;overflow:hidden;border:1px solid #222;">
+                <button id="mylist-tab-fav" onclick="switchMyListTab('fav')" style="flex:1;padding:10px 6px;background:#e50914;color:white;border:none;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:5px;">
+                    <i class="fa-solid fa-heart"></i> <span id="txt-tab-liked">لایک‌شده</span>
+                </button>
+                <button id="mylist-tab-rated" onclick="switchMyListTab('rated')" style="flex:1;padding:10px 6px;background:#1a1a1a;color:#aaa;border:none;border-right:1px solid #222;border-left:1px solid #222;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:5px;">
+                    <i class="fa-solid fa-star" style="color:#f5c518;"></i> <span id="txt-tab-rated">امتیازداده</span>
+                </button>
+                <button id="mylist-tab-watchlater" onclick="switchMyListTab('watchlater')" style="flex:1;padding:10px 6px;background:#1a1a1a;color:#aaa;border:none;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:5px;">
+                    <i class="fa-solid fa-bookmark" style="color:#00b894;"></i> <span id="txt-tab-watchlater">بعداً ببینم</span>
+                </button>
+                <button id="mylist-tab-recent" onclick="switchMyListTab('recent')" style="flex:1;padding:10px 6px;background:#1a1a1a;color:#aaa;border:none;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:5px;">
+                    <i class="fa-solid fa-clock-rotate-left" style="color:#a78bfa;"></i> <span id="txt-tab-recent">اخیراً دیده‌شده</span>
+                </button>
+            </div>
+
+            <!-- FAV SECTION -->
+            <div id="mylist-section-fav">
+                <div class="grid-container" id="fav-grid"></div>
+                <div style="text-align:center;color:#555;margin-top:50px;padding:20px;display:none;" id="fav-empty"></div>
+            </div>
+
+            <!-- RATED SECTION -->
+            <div id="mylist-section-rated" style="display:none;padding:0 12px;">
+                <div id="rated-list-content"></div>
+                <div style="text-align:center;color:#555;margin-top:50px;padding:20px;display:none;" id="rated-empty"></div>
+            </div>
+
+            <!-- WATCH LATER SECTION -->
+            <div id="mylist-section-watchlater" style="display:none;">
+                <div class="grid-container" id="watchlater-grid"></div>
+                <div style="text-align:center;color:#555;margin-top:50px;padding:20px;display:none;" id="watchlater-empty"></div>
+            </div>
+
+            <!-- RECENT SECTION -->
+            <div id="mylist-section-recent" style="display:none;">
+                <div class="grid-container" id="recent-grid"></div>
+                <div style="text-align:center;color:#555;margin-top:50px;padding:20px;display:none;" id="recent-empty"></div>
+            </div>
+
+            <div style="height:70px;"></div>
+        </div>
+        
+
+        <div id="tests-tab" class="tab-content">
+            <header>
+                <span class="logo" id="txt-tests-head">Tests & Quiz</span>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <div class="profile-header-avatar" onclick="openProfileModal()" title="Profile"><span>👤</span></div>
+                    <div class="fn-lang-mini" onclick="toggleLang()" title="Change Language"><span class="fn-lang-mini-text">EN</span></div>
+                    </span> <i class="fa-solid fa-gear" onclick="switchTab('settings')" style="font-size:20px;color:#aaa;cursor:pointer;" title="Settings"></i> <i class="fa-solid fa-expand" onclick="toggleAppFullscreen()" style="font-size:20px;color:#aaa;cursor:pointer;" title="Fullscreen"></i>
+                    <i class="fa-solid fa-bars menu-trigger" onclick="toggleMenu()" title="Menu"></i>
+                </div>
+            </header>
+            <div class="tests-wrap">
+                <div class="tests-hero">
+                    <div class="tests-title" id="tests-main-title">Tests & Quiz</div>
+                    <div class="tests-sub" id="tests-main-sub">Personality analysis and fun cinema/series quizzes.</div>
+                </div>
+                <div id="tests-home-panel" class="tests-card-grid">
+                    <div class="tests-card personality" onclick="openPersonalityAnalysis()">
+                        <div>
+                            <div class="tc-title" id="tests-personality-title">Personality Analysis</div>
+                            <div class="tc-desc" id="tests-personality-desc">Analyze your taste based on favorite movies, series and anime.</div>
+                        </div>
+                        <div class="tc-icon">🧠</div>
+                    </div>
+                    <div class="tests-card movie" onclick="openQuizHome('movie')">
+                        <div>
+                            <div class="tc-title" id="tests-movie-title">Movie Quiz</div>
+                            <div class="tc-desc" id="tests-movie-desc">Test how much of a real movie fan you are.</div>
+                        </div>
+                        <div class="tc-icon">🎬</div>
+                    </div>
+                    <div class="tests-card series" onclick="openQuizHome('series')">
+                        <div>
+                            <div class="tc-title" id="tests-series-title">Series Quiz</div>
+                            <div class="tc-desc" id="tests-series-desc">Measure your series knowledge across levels.</div>
+                        </div>
+                        <div class="tc-icon">📺</div>
+                    </div>
+                </div>
+                <div id="quiz-level-panel" style="display:none;">
+                    <button class="quiz-back-btn" onclick="renderTestsQuizHome()" id="quiz-back-label">← Back</button>
+                    <div class="tests-hero" style="margin-bottom:12px;">
+                        <div class="tests-title" id="quiz-level-title">Movie Quiz</div>
+                        <div class="tests-sub" id="quiz-level-sub">Choose a difficulty level. Each test has 10 questions.</div>
+                    </div>
+                    <div class="quiz-level-grid" id="quiz-level-grid"></div>
+                </div>
+            </div>
+        </div>
+
+                <!-- NEW: WATCH HISTORY TAB -->
+        <div id="history-tab" class="tab-content">
+            <header>
+                <span class="logo" id="txt-history-head">Watch History</span>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <i class="fa-solid fa-trash-can" onclick="requestClearHistory()" style="font-size:19px;color:#aaa;cursor:pointer;" title="Clear History"></i>
+                    <div class="profile-header-avatar" onclick="openProfileModal()" title="Profile"><span>👤</span></div>
+                    <div class="fn-lang-mini" onclick="toggleLang()" title="Change Language"><span class="fn-lang-mini-text">EN</span></div>
+                    </span> <i class="fa-solid fa-gear" onclick="switchTab('settings')" style="font-size:20px;color:#aaa;cursor:pointer;" title="Settings"></i> <i class="fa-solid fa-expand" onclick="toggleAppFullscreen()" style="font-size:20px;color:#aaa;cursor:pointer;" title="Fullscreen"></i>
+                    <i class="fa-solid fa-bars menu-trigger" onclick="toggleMenu()" title="Menu"></i>
+                </div>
+            </header>
+            <div style="padding: 20px;">
+                <div id="history-content"></div>
+            </div>
+            <div style="height:70px;"></div>
+        </div>
+        
+        <div id="settings-tab" class="tab-content">
+            <header>
+                <span class="logo" id="txt-set-head-header">Settings</span>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <div class="profile-header-avatar" onclick="openProfileModal()" title="Profile"><span>👤</span></div>
+                    <div class="fn-lang-mini" onclick="toggleLang()" title="Change Language"><span class="fn-lang-mini-text">EN</span></div>
+                    </span> <i class="fa-solid fa-gear" onclick="switchTab('settings')" style="font-size:20px;color:#aaa;cursor:pointer;" title="Settings"></i> <i class="fa-solid fa-expand" onclick="toggleAppFullscreen()" style="font-size:20px;color:#aaa;cursor:pointer;" title="Fullscreen"></i>
+                    <i class="fa-solid fa-bars menu-trigger" onclick="toggleMenu()" title="Menu"></i>
+                </div>
+            </header>
+            <div style="padding:20px;">
+                <h2 style="margin-bottom:20px; color:var(--primary);" id="txt-set-head">Settings</h2>
+                
+                <div class="setting-section">
+                    <div class="setting-header" id="txt-theme-head">Appearance & Language</div>
+                    
+                    <!-- Creative Theme Selector -->
+                    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:15px;">
+                        
+                        <!-- Netflix Classic -->
+                        <div class="creative-theme-card" onclick="applyCreativeTheme('netflix')" id="theme-card-netflix" style="background:linear-gradient(135deg,#1a0000,#3d0000);border:2px solid #E50914;border-radius:14px;padding:14px 10px;cursor:pointer;text-align:center;transition:0.2s;position:relative;overflow:hidden;">
+                            <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#E50914,#ff6b6b);"></div>
+                            <div style="font-size:22px;margin-bottom:6px;">🎬</div>
+                            <div style="font-size:11px;font-weight:bold;color:#ff4444;">Netflix Classic</div>
+                            <div style="font-size:9px;color:#888;margin-top:3px;">Red · Dark · Bold</div>
+                            <div style="display:flex;gap:4px;justify-content:center;margin-top:8px;">
+                                <span style="width:14px;height:14px;border-radius:50%;background:#E50914;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#cc0000;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#ff6b6b;border:1px solid #fff2;"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Midnight Ocean -->
+                        <div class="creative-theme-card" onclick="applyCreativeTheme('ocean')" id="theme-card-ocean" style="background:linear-gradient(135deg,#000d1a,#001f3d);border:2px solid #0066cc;border-radius:14px;padding:14px 10px;cursor:pointer;text-align:center;transition:0.2s;position:relative;overflow:hidden;">
+                            <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0066cc,#00d4ff);"></div>
+                            <div style="font-size:22px;margin-bottom:6px;">🌊</div>
+                            <div style="font-size:11px;font-weight:bold;color:#00aaff;">Midnight Ocean</div>
+                            <div style="font-size:9px;color:#888;margin-top:3px;">Blue · Deep · Elegant</div>
+                            <div style="display:flex;gap:4px;justify-content:center;margin-top:8px;">
+                                <span style="width:14px;height:14px;border-radius:50%;background:#0066cc;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#0099ff;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#00d4ff;border:1px solid #fff2;"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Forest Night -->
+                        <div class="creative-theme-card" onclick="applyCreativeTheme('forest')" id="theme-card-forest" style="background:linear-gradient(135deg,#001a0d,#00391a);border:2px solid #00aa44;border-radius:14px;padding:14px 10px;cursor:pointer;text-align:center;transition:0.2s;position:relative;overflow:hidden;">
+                            <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00aa44,#66ff99);"></div>
+                            <div style="font-size:22px;margin-bottom:6px;">🌿</div>
+                            <div style="font-size:11px;font-weight:bold;color:#33cc66;">Forest Night</div>
+                            <div style="font-size:9px;color:#888;margin-top:3px;">Green · Natural · Calm</div>
+                            <div style="display:flex;gap:4px;justify-content:center;margin-top:8px;">
+                                <span style="width:14px;height:14px;border-radius:50%;background:#00aa44;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#00cc55;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#66ff99;border:1px solid #fff2;"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Royal Violet -->
+                        <div class="creative-theme-card" onclick="applyCreativeTheme('violet')" id="theme-card-violet" style="background:linear-gradient(135deg,#0d001a,#1e003d);border:2px solid #8800cc;border-radius:14px;padding:14px 10px;cursor:pointer;text-align:center;transition:0.2s;position:relative;overflow:hidden;">
+                            <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#8800cc,#cc44ff);"></div>
+                            <div style="font-size:22px;margin-bottom:6px;">👑</div>
+                            <div style="font-size:11px;font-weight:bold;color:#aa44ff;">Royal Violet</div>
+                            <div style="font-size:9px;color:#888;margin-top:3px;">Purple · Luxe · Magic</div>
+                            <div style="display:flex;gap:4px;justify-content:center;margin-top:8px;">
+                                <span style="width:14px;height:14px;border-radius:50%;background:#8800cc;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#aa44ff;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#cc88ff;border:1px solid #fff2;"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Golden Hour -->
+                        <div class="creative-theme-card" onclick="applyCreativeTheme('gold')" id="theme-card-gold" style="background:linear-gradient(135deg,#1a1000,#3d2900);border:2px solid #cc8800;border-radius:14px;padding:14px 10px;cursor:pointer;text-align:center;transition:0.2s;position:relative;overflow:hidden;">
+                            <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#cc8800,#ffdd44);"></div>
+                            <div style="font-size:22px;margin-bottom:6px;">✨</div>
+                            <div style="font-size:11px;font-weight:bold;color:#ffcc00;">Golden Hour</div>
+                            <div style="font-size:9px;color:#888;margin-top:3px;">Gold · Warm · Premium</div>
+                            <div style="display:flex;gap:4px;justify-content:center;margin-top:8px;">
+                                <span style="width:14px;height:14px;border-radius:50%;background:#cc8800;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#ffcc00;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#ffee88;border:1px solid #fff2;"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Sunset Rose -->
+                        <div class="creative-theme-card" onclick="applyCreativeTheme('rose')" id="theme-card-rose" style="background:linear-gradient(135deg,#1a0010,#3d0025);border:2px solid #cc0066;border-radius:14px;padding:14px 10px;cursor:pointer;text-align:center;transition:0.2s;position:relative;overflow:hidden;">
+                            <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#cc0066,#ff66aa);"></div>
+                            <div style="font-size:22px;margin-bottom:6px;">🌸</div>
+                            <div style="font-size:11px;font-weight:bold;color:#ff4499;">Sunset Rose</div>
+                            <div style="font-size:9px;color:#888;margin-top:3px;">Pink · Vibrant · Trendy</div>
+                            <div style="display:flex;gap:4px;justify-content:center;margin-top:8px;">
+                                <span style="width:14px;height:14px;border-radius:50%;background:#cc0066;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#ff4499;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#ff88cc;border:1px solid #fff2;"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Cyberpunk -->
+                        <div class="creative-theme-card" onclick="applyCreativeTheme('cyber')" id="theme-card-cyber" style="background:linear-gradient(135deg,#001a1a,#00332e);border:2px solid #00ffcc;border-radius:14px;padding:14px 10px;cursor:pointer;text-align:center;transition:0.2s;position:relative;overflow:hidden;">
+                            <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00ffcc,#00ccff);"></div>
+                            <div style="font-size:22px;margin-bottom:6px;">⚡</div>
+                            <div style="font-size:11px;font-weight:bold;color:#00ffcc;">Cyberpunk</div>
+                            <div style="font-size:9px;color:#888;margin-top:3px;">Neon · Futuristic · Edge</div>
+                            <div style="display:flex;gap:4px;justify-content:center;margin-top:8px;">
+                                <span style="width:14px;height:14px;border-radius:50%;background:#00ffcc;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#00ccff;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#66ffee;border:1px solid #fff2;"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Ember Fire -->
+                        <div class="creative-theme-card" onclick="applyCreativeTheme('ember')" id="theme-card-ember" style="background:linear-gradient(135deg,#1a0800,#3d1500);border:2px solid #ff6600;border-radius:14px;padding:14px 10px;cursor:pointer;text-align:center;transition:0.2s;position:relative;overflow:hidden;">
+                            <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#ff6600,#ffcc00);"></div>
+                            <div style="font-size:22px;margin-bottom:6px;">🔥</div>
+                            <div style="font-size:11px;font-weight:bold;color:#ff8833;">Ember Fire</div>
+                            <div style="font-size:9px;color:#888;margin-top:3px;">Orange · Intense · Warm</div>
+                            <div style="display:flex;gap:4px;justify-content:center;margin-top:8px;">
+                                <span style="width:14px;height:14px;border-radius:50%;background:#ff6600;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#ff8833;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#ffcc00;border:1px solid #fff2;"></span>
+                            </div>
+                        </div>
+
+                        <!-- Day Mood -->
+                        <div class="creative-theme-card" onclick="applyCreativeTheme('dayMood')" id="theme-card-dayMood" style="background:linear-gradient(135deg,#ffffff,#e5e7eb);border:2px solid #111827;border-radius:14px;padding:14px 10px;cursor:pointer;text-align:center;transition:0.2s;position:relative;overflow:hidden;">
+                            <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#111827,#9ca3af);"></div>
+                            <div style="font-size:22px;margin-bottom:6px;">☀️</div>
+                            <div style="font-size:11px;font-weight:bold;color:#111827;">Day Mood</div>
+                            <div style="font-size:9px;color:#4b5563;margin-top:3px;">White · Gray · Black</div>
+                            <div style="display:flex;gap:4px;justify-content:center;margin-top:8px;">
+                                <span style="width:14px;height:14px;border-radius:50%;background:#ffffff;border:1px solid #11182744;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#d1d5db;border:1px solid #11182744;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#111827;border:1px solid #11182744;"></span>
+                            </div>
+                        </div>
+
+                        <!-- Telegram Day -->
+                        <div class="creative-theme-card" onclick="applyCreativeTheme('telegramDay')" id="theme-card-telegramDay" style="background:linear-gradient(135deg,#f7fbff,#d9efff);border:2px solid #229ED9;border-radius:14px;padding:14px 10px;cursor:pointer;text-align:center;transition:0.2s;position:relative;overflow:hidden;">
+                            <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#229ED9,#7dd3fc);"></div>
+                            <div style="font-size:22px;margin-bottom:6px;">💬</div>
+                            <div style="font-size:11px;font-weight:bold;color:#1688c2;">Telegram Day</div>
+                            <div style="font-size:9px;color:#55778c;margin-top:3px;">White · Sky Blue · Clean</div>
+                            <div style="display:flex;gap:4px;justify-content:center;margin-top:8px;">
+                                <span style="width:14px;height:14px;border-radius:50%;background:#ffffff;border:1px solid #229ED944;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#d9efff;border:1px solid #229ED944;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#229ED9;border:1px solid #229ED944;"></span>
+                            </div>
+                        </div>
+
+                        <!-- Soft Dark Gray -->
+                        <div class="creative-theme-card" onclick="applyCreativeTheme('softDarkGray')" id="theme-card-softDarkGray" style="background:linear-gradient(135deg,#17191d,#30343a);border:2px solid #6b7280;border-radius:14px;padding:14px 10px;cursor:pointer;text-align:center;transition:0.2s;position:relative;overflow:hidden;">
+                            <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#9ca3af,#e5e7eb);"></div>
+                            <div style="font-size:22px;margin-bottom:6px;">🌑</div>
+                            <div style="font-size:11px;font-weight:bold;color:#d1d5db;">Soft Dark Gray</div>
+                            <div style="font-size:9px;color:#9ca3af;margin-top:3px;">Dark · Gray · Soft</div>
+                            <div style="display:flex;gap:4px;justify-content:center;margin-top:8px;">
+                                <span style="width:14px;height:14px;border-radius:50%;background:#15171a;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#30343a;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#9ca3af;border:1px solid #fff2;"></span>
+                            </div>
+                        </div>
+
+                        <!-- Gray Blue -->
+                        <div class="creative-theme-card" onclick="applyCreativeTheme('grayBlue')" id="theme-card-grayBlue" style="background:linear-gradient(135deg,#202833,#33485d);border:2px solid #3b82f6;border-radius:14px;padding:14px 10px;cursor:pointer;text-align:center;transition:0.2s;position:relative;overflow:hidden;">
+                            <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3b82f6,#93c5fd);"></div>
+                            <div style="font-size:22px;margin-bottom:6px;">🔷</div>
+                            <div style="font-size:11px;font-weight:bold;color:#93c5fd;">Gray Blue</div>
+                            <div style="font-size:9px;color:#9fb4cc;margin-top:3px;">Gray · Blue · Balanced</div>
+                            <div style="display:flex;gap:4px;justify-content:center;margin-top:8px;">
+                                <span style="width:14px;height:14px;border-radius:50%;background:#202833;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#33485d;border:1px solid #fff2;"></span>
+                                <span style="width:14px;height:14px;border-radius:50%;background:#3b82f6;border:1px solid #fff2;"></span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div style="margin-top:15px; text-align:center;">
+                        <button onclick="toggleLang()" style="background:#333; color:white; border:1px solid #555; padding:8px 25px; border-radius:20px; font-weight:bold; cursor:pointer;">English / فارسی</button>
+                    </div>
+                </div>
+                
+                                <!-- PERSONAL STATS DASHBOARD IN SETTINGS -->
+                <div class="setting-section" id="personal-stats-settings-section">
+                    <div class="setting-header" id="txt-my-stats-header">&#x1F4CA; <span id="txt-stats-head-label">&#x0622;&#x0645;&#x0627;&#x0631; &#x0633;&#x06CC;&#x0646;&#x0645;&#x0627;&#x06CC;&#x06CC; &#x0645;&#x0646;</span></div>
+                    <div class="stats-grid" id="mini-stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="stat-watchlist">0</div>
+                            <div class="stat-label" id="stat-watchlist-lbl">&#x0644;&#x06CC;&#x0633;&#x062A; &#x0639;&#x0644;&#x0627;&#x0642;&#x0647;&#x200C;&#x0645;&#x0646;&#x062F;&#x06CC;</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="stat-history">0</div>
+                            <div class="stat-label" id="stat-history-lbl">&#x062A;&#x0645;&#x0627;&#x0634;&#x0627;&#x0634;&#x062F;&#x0647;</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="stat-hours">0</div>
+                            <div class="stat-label" id="stat-hours-lbl">&#x0633;&#x0627;&#x0639;&#x062A; &#x062A;&#x0645;&#x0627;&#x0634;&#x0627;</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="stat-rating-count">0</div>
+                            <div class="stat-label" id="stat-rating-lbl">&#x0627;&#x0645;&#x062A;&#x06CC;&#x0627;&#x0632; &#x062F;&#x0627;&#x062F;&#x0647;&#x200C;&#x0627;&#x0645;</div>
+                        </div>
+                    </div>
+                    <!-- DETAILED STATS BUTTON -->
+                    <button onclick="openDetailedStats()" style="width:100%;margin-top:12px;padding:11px;background:linear-gradient(135deg,rgba(229,9,20,0.15),rgba(229,9,20,0.08));border:1px solid rgba(229,9,20,0.3);color:white;border-radius:10px;font-size:13px;font-weight:bold;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;">
+                        <i class="fa-solid fa-chart-bar" style="color:var(--primary);"></i>
+                        <span id="txt-detailed-stats-btn">&#x0622;&#x0645;&#x0627;&#x0631; &#x062A;&#x0641;&#x0635;&#x06CC;&#x0644;&#x06CC;</span>
+                    </button>
+                </div>
+
+                <!-- STATS SECTION -->
+                <div class="setting-section" id="stats-section">
+                    <div class="setting-header">📊 Archive Stats</div>
+                    <div id="stats-content" style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;">
+                        <div style="text-align:center;padding:5px;"><i class="fa-solid fa-spinner fa-spin" style="color:var(--primary);"></i></div>
+                    </div>
+                </div>
+                <div class="setting-section">
+                    <div class="setting-header" id="txt-backup-head">Backup &amp; Restore</div>
+                    <p style="font-size:12px;color:var(--sub,#999);line-height:1.7;margin-bottom:14px;" id="txt-backup-desc">
+                        Save your favorites, watch history, likes and theme to a file — and load them back on any device.
+                    </p>
+                    <div style="display:flex;flex-direction:column;gap:10px;">
+                        <button onclick="exportFNBackup()" style="display:flex;align-items:center;justify-content:center;gap:10px;background:var(--primary,#E50914);color:#fff;border:none;border-radius:10px;padding:13px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;">
+                            <i class="fa-solid fa-download"></i> <span id="txt-backup-export">Download Backup File</span>
+                        </button>
+                        <button onclick="document.getElementById('fn-import-file-input').click()" style="display:flex;align-items:center;justify-content:center;gap:10px;background:var(--card,#1c1c1c);color:var(--text,#fff);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:13px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;">
+                            <i class="fa-solid fa-upload"></i> <span id="txt-backup-import">Restore from File</span>
+                        </button>
+                        <input type="file" id="fn-import-file-input" accept="application/json" style="display:none;" onchange="handleFNImportFile(this)">
+                    </div>
+                </div>
+
+                <div class="setting-section">
+                    <div class="setting-header" id="txt-about-head">About</div>
+                    <div class="dev-info">
+                        <p style="margin-bottom:10px;"><strong id="txt-desc-t">Family Night v26.1.1</strong></p>
+                        <p id="txt-desc-b">The ultimate streaming experience. High-quality movies and series at your fingertips.</p>
+                        <br>
+                        <p id="txt-copy">© 2025 Game of family. All rights reserved.</p>
+                        <p id="txt-dev">Developer: <strong>Alireza Ahmadi</strong></p>
+                    </div>
+                    <div class="setting-section">
+                        <div class="setting-header" id="txt-contact">Contact Developer</div>
+                        <div class="social-grid">
+                            <a href="https://t.me/HashtagAlireza" target="_blank" class="social-btn sb-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://instagram.com/HashtagAlireza" target="_blank" class="social-btn sb-in"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                            <a href="https://youtube.com/@HashtagAlireza" target="_blank" class="social-btn sb-yt"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                            <a href="https://twitter.com/HashtagAlireza" target="_blank" class="social-btn sb-x"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- FLOATING "PICK A MOVIE FOR ME" BUTTON — Home tab only -->
+        <div id="fab-pick-movie" class="fab-visible" onclick="pickRandomMovieFab()">
+            <div class="fab-content">
+                <i class="fa-solid fa-shuffle fab-icon" id="fab-pick-icon"></i>
+                <div class="fab-text" id="fab-pick-text">Pick a Movie for me</div>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="nav-item" onclick="switchTab('movies', this); if(!document.getElementById('movies-grid').children.length) updateDiscovery('movie');"><i class="fa-solid fa-film"></i><span id="nav-mov">Movies</span></div>
+            <div class="nav-item" onclick="switchTab('series', this); if(!document.getElementById('series-grid').children.length) updateDiscovery('tv');"><i class="fa-solid fa-tv"></i><span id="nav-ser">Series</span></div>
+            <div class="nav-item" onclick="switchTab('search', this); loadTrendingActors()"><i class="fa-solid fa-search"></i><span id="nav-search">Search</span></div>
+            <div class="nav-item nav-item-home active" onclick="switchTab('home', this)"><i class="fa-solid fa-house"></i><span id="nav-home">Home</span></div>
+            <div class="nav-item" onclick="switchTab('tests', this); renderTestsQuizHome()"><i class="fa-solid fa-brain"></i><span id="nav-tests">Tests</span></div>
+            <div class="nav-item" onclick="switchTab('fav', this); loadFavorites()"><i class="fa-solid fa-heart"></i><span id="nav-fav">My List</span></div>
+            <div class="nav-item" onclick="switchTab('history', this); loadHistory()"><i class="fa-solid fa-history"></i><span id="nav-history">History</span></div>
+        </div>
+    </div>
+
+    <!-- Quiz Runtime Page -->
+    <div id="quiz-level-action-modal" class="quiz-level-action-modal" onclick="closeQuizLevelOptions(event)">
+        <div class="quiz-level-action-sheet">
+            <div class="qlas-title" id="qlas-title">Quiz Level</div>
+            <button class="quiz-action-btn primary" id="qlas-retry" onclick="quizOptionRetry()">آزمون مجدد</button>
+            <button class="quiz-action-btn" id="qlas-result" onclick="quizOptionResult()">برگشت به نتایج</button>
+            <button class="quiz-action-btn" id="qlas-share" onclick="quizOptionShare()">اشتراک‌گذاری نتیجه</button>
+            <button class="quiz-action-btn" id="qlas-cancel" onclick="closeQuizLevelOptionsDirect()">بستن</button>
+        </div>
+    </div>
+
+    <div id="quiz-page" class="quiz-page">
+        <div class="quiz-header">
+            <div class="quiz-close" onclick="closeQuizPage()"><i class="fa-solid fa-times"></i></div>
+            <div class="quiz-header-title" id="quiz-page-title">Quiz</div>
+            <div style="width:34px;"></div>
+        </div>
+        <div class="quiz-content" id="quiz-page-content"></div>
+    </div>
+
+    <!-- COMPANIES ALL PAGE -->
+    <div id="companies-all-page" style="position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg);z-index:100;display:none;flex-direction:column;">
+        <div class="gg-header">
+            <div class="page-header-actions"><i class="fa-solid fa-times" style="color:white;font-size:20px;cursor:pointer;" onclick="closeCompaniesAll()"></i><i class="fa-solid fa-expand page-header-fs" onclick="toggleAppFullscreen()" title="Fullscreen"></i></div>
+            <span style="font-weight:bold;color:white;">🎬 Studios & Networks</span>
+            <div></div>
+        </div>
+        <div id="companies-all-grid" class="companies-all-grid-container"></div>
+        <div class="load-more-btn" id="btn-more-companies" onclick="loadMoreCompanies()">Load More</div>
+    </div>
+
+    <!-- ALL COLLECTIONS PAGE -->
+    <div id="all-collections-page" style="position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg);z-index:100;display:none;flex-direction:column;">
+        <div class="gg-header">
+            <div class="page-header-actions"><i class="fa-solid fa-times" style="color:white;font-size:20px;cursor:pointer;" onclick="closeAllCollectionsPage()"></i><i class="fa-solid fa-expand page-header-fs" onclick="toggleAppFullscreen()" title="Fullscreen"></i></div>
+            <span style="font-weight:bold;color:white;" id="txt-all-collections-title">🎬 Collections</span>
+            <div></div>
+        </div>
+        <div id="all-collections-grid" style="flex:1;overflow-y:auto;padding:14px;display:flex;flex-wrap:wrap;gap:16px;align-content:flex-start;"></div>
+        <div id="all-collections-status" style="text-align:center;color:#888;font-size:12px;padding:12px;"></div>
+        <div class="load-more-btn" id="btn-more-collections" onclick="loadMoreAllCollections()">Load More</div>
+    </div>
+
+    <!-- COLLECTION DETAIL PAGE (all parts of one collection) -->
+    <div id="collection-detail-page" style="position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg);z-index:110;display:none;flex-direction:column;">
+        <div class="gg-header">
+            <div class="page-header-actions"><i class="fa-solid fa-times" style="color:white;font-size:20px;cursor:pointer;" onclick="closeCollectionDetail()"></i><i class="fa-solid fa-expand page-header-fs" onclick="toggleAppFullscreen()" title="Fullscreen"></i></div>
+            <span style="font-weight:bold;color:white;" id="collection-detail-title">Collection</span>
+            <div></div>
+        </div>
+        <div id="collection-detail-grid" class="grid-container" style="flex:1;overflow-y:auto;"></div>
+    </div>
+
+    <!-- WHERE TO WATCH (LEGAL) PAGE -->
+    <div id="wtw-page" style="position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg);z-index:300;display:none;flex-direction:column;">
+        <div class="gg-header">
+            <i class="fa-solid fa-times" style="color:var(--text,#fff);font-size:20px;cursor:pointer;" onclick="closeWhereToWatch()"></i>
+            <span style="font-weight:bold;color:var(--text,#fff);" id="wtw-page-title">Where to Watch</span>
+            <div></div>
+        </div>
+        <div id="wtw-content" style="flex:1;overflow-y:auto;padding:16px;"></div>
+    </div>
+    
+    <!-- COMPANY WORKS PAGE -->
+    <div id="company-works-page" style="position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg);z-index:110;display:none;flex-direction:column;">
+        <div class="gg-header">
+            <div class="page-header-actions"><i class="fa-solid fa-times" style="color:white;font-size:20px;cursor:pointer;" onclick="document.getElementById('company-works-page').style.display='none'"></i><i class="fa-solid fa-expand page-header-fs" onclick="toggleAppFullscreen()" title="Fullscreen"></i></div>
+            <span id="cw-title" style="font-weight:bold;color:white;"></span>
+            <div></div>
+        </div>
+        <div id="cw-content" style="flex:1;overflow-y:auto;"></div>
+        <div class="load-more-btn" id="btn-more-cw" onclick="loadMoreCompanyWorks()">Load More</div>
+    </div>
+
+    <div id="generic-grid-page">
+        <div class="gg-header">
+            <div class="page-header-actions"><i class="fa-solid fa-times" style="color:white; font-size:20px; cursor:pointer;" onclick="closeGenericGrid()"></i><i class="fa-solid fa-expand page-header-fs" onclick="toggleAppFullscreen()" title="Fullscreen"></i></div>
+            <span id="gg-title" style="font-weight:bold; color:white;">List</span>
+            <div></div>
+        </div>
+        <div id="gg-sort-bar" style="display:none;padding:10px 15px;background:#0f0f0f;border-bottom:1px solid #222;align-items:center;gap:10px;">
+            <span id="gg-sort-label" style="font-size:11px;color:#888;font-weight:700;white-space:nowrap;">Sort</span>
+            <select id="gg-sort-select" onchange="applyGenericSortFilter()" style="flex:1;background:#1b1b1b;color:white;border:1px solid #333;border-radius:8px;padding:9px 10px;font-size:12px;font-family:inherit;outline:none;">
+                <option value="default">Default order</option>
+                <option value="newest">Newest</option>
+                <option value="oldest">Oldest</option>
+                <option value="popular">Most voted</option>
+            </select>
+        </div>
+        <div id="gg-person-search-bar">
+            <div class="gg-person-search-wrap">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input id="gg-person-search-input" type="text" autocomplete="off" oninput="searchGenericPeople(this.value)" placeholder="Search people...">
+                <span id="gg-person-search-clear" onclick="clearGenericPersonSearch()">×</span>
+            </div>
+        </div>
+        <div id="gg-content" style="flex:1; overflow-y:auto;"></div> 
+        <div class="load-more-btn" id="btn-more-g" onclick="loadMoreGeneric()">More</div>
+    </div>
+
+    <!-- PUBLIC DOMAIN FREE DOWNLOADS PAGE (Archive.org — legal, copyright-expired titles) -->
+    <div id="pd-grid-page" style="position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg,#000);z-index:100;display:none;flex-direction:column;">
+        <div class="gg-header">
+            <i class="fa-solid fa-times" style="color:white;font-size:20px;cursor:pointer;" onclick="closePDGridPage()"></i>
+            <span id="pd-grid-title" style="font-weight:bold;color:white;">دانلود رایگان (Public Domain)</span>
+            <div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 15px;background:#0f0f0f;border-bottom:1px solid #222;">
+            <select id="pd-type-select" onchange="loadPDGrid(true)" style="flex:1;background:#1b1b1b;color:white;border:1px solid #333;border-radius:8px;padding:9px 10px;font-size:12px;font-family:inherit;outline:none;">
+                <option value="movie">فیلم سینمایی</option>
+                <option value="tv">سریال</option>
+            </select>
+            <select id="pd-sort-select" onchange="loadPDGrid(true)" style="flex:1;background:#1b1b1b;color:white;border:1px solid #333;border-radius:8px;padding:9px 10px;font-size:12px;font-family:inherit;outline:none;">
+                <option value="downloads desc">محبوب‌ترین</option>
+                <option value="year desc">جدیدترین</option>
+                <option value="year asc">قدیمی‌ترین</option>
+                <option value="avg_rating desc">بالاترین امتیاز</option>
+            </select>
+        </div>
+        <div id="pd-cat-row" style="display:flex;align-items:center;gap:10px;padding:0 15px 10px;background:#0f0f0f;border-bottom:1px solid #222;">
+            <select id="pd-cat-select" onchange="loadPDGrid(true)" style="width:100%;background:#1b1b1b;color:white;border:1px solid #333;border-radius:8px;padding:9px 10px;font-size:12px;font-family:inherit;outline:none;">
+                <option value="all">همه دسته‌ها</option>
+            </select>
+        </div>
+        <div id="pd-loading-anim" style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:70px 20px 40px;">
+            <div class="pd-cine-loader">
+                <div class="pd-cine-reel"></div>
+                <div class="pd-cine-dot"></div><div class="pd-cine-dot"></div><div class="pd-cine-dot"></div><div class="pd-cine-dot"></div>
+                <div class="pd-cine-clap"><i class="fa-solid fa-clapperboard"></i></div>
+            </div>
+            <div id="pd-loading-text" style="color:var(--text,#fff);font-size:13px;font-weight:700;">در حال جستجوی آرشیو قانونی...</div>
+        </div>
+        <div id="pd-grid-content" class="grid-container" style="flex:1;overflow-y:auto;"></div>
+        <div id="pd-grid-status" style="padding:20px;text-align:center;color:#888;font-size:12px;"></div>
+        <div class="load-more-btn" id="pd-grid-more" onclick="loadPDGrid(false)" style="display:none;">بیشتر</div>
+    </div>
+
+    <!-- PUBLIC DOMAIN DOWNLOAD DETAIL SHEET -->
+    <div id="pd-detail-modal" style="position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:110;display:none;align-items:flex-end;justify-content:center;" onclick="if(event.target===this) closePDDetail()">
+        <div style="background:#111;width:100%;max-width:600px;border-radius:16px 16px 0 0;padding:16px;max-height:80vh;overflow-y:auto;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                <span id="pd-detail-title" style="font-weight:bold;color:white;font-size:15px;"></span>
+                <i class="fa-solid fa-times" style="color:#aaa;cursor:pointer;font-size:18px;" onclick="closePDDetail()"></i>
+            </div>
+            <div id="pd-detail-body" style="display:flex;flex-direction:column;gap:8px;"></div>
+        </div>
+    </div>
+
+
+    <!-- Person Bio Modal -->
+    <div id="person-bio-modal" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:220;overflow-y:auto;display:none;">
+        <div class="close-btn" onclick="document.getElementById('person-bio-modal').style.display='none'"><i class="fa-solid fa-times"></i></div>
+        <div class="floating-close-btn" onclick="document.getElementById('person-bio-modal').style.display='none'"><i class="fa-solid fa-times"></i></div>
+        <div style="padding:20px;margin-top:55px;">
+            <div style="display:flex;gap:15px;align-items:flex-start;margin-bottom:16px;">
+                <img id="pb-img" src="" style="width:100px;height:130px;object-fit:cover;border-radius:12px;flex-shrink:0;" loading="lazy">
+                <div style="flex:1;">
+                    <h2 id="pb-name" style="font-size:22px;margin:0 0 8px;color:#fff;"></h2>
+                    <div id="pb-subtitle" style="color:#e50914;font-size:13px;font-weight:600;margin-bottom:6px;"></div>
+                    <div id="pb-nationality" class="person-nationality"></div>
+                    <div id="pb-meta" style="color:#aaa;font-size:12px;line-height:1.6;"></div>
+                </div>
+            </div>
+            <!-- Social Links -->
+            <div id="pb-social-links" class="person-social-links"></div>
+            <!-- Awards Section -->
+            <div id="pb-awards-box" class="person-awards-section" style="display:none;">
+                <div class="person-awards-title">🏆 <span id="pb-awards-title-text">جوایز و افتخارات / Awards & Honors</span></div>
+                <div id="pb-awards-list"></div>
+            </div>
+            <div id="pb-bio-text" style="color:#ccc;font-size:14px;line-height:1.8;margin-bottom:20px;white-space:pre-wrap;"></div>
+            <div id="pb-awards-section" style="display:none;">
+                <h3 id="pb-awards-title" style="font-size:16px;color:#fff;margin-bottom:12px;border-left:3px solid #e50914;padding-left:10px;">🏆 Awards & Nominations</h3>
+                <div id="pb-awards-content" style="color:#ccc;font-size:13px;line-height:1.8;"></div>
+            </div>
+            <div id="pb-known-for" style="margin-top:20px;"></div>
+            <div id="pb-translate-section" style="margin-top:20px;">
+                <button onclick="translateBio()" id="pb-translate-btn" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;"><i class="fa-solid fa-language"></i> <span id="pb-translate-btn-text">ترجمه به فارسی</span></button>
+            </div>
+            <div style="height:70px;"></div>
+        </div>
+    </div>
+
+    <!-- Person Gallery Modal -->
+    <div id="person-gallery-modal" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:220;overflow-y:auto;display:none;">
+        <div class="close-btn" onclick="document.getElementById('person-gallery-modal').style.display='none'"><i class="fa-solid fa-times"></i></div>
+        <div style="padding:15px;margin-top:55px;">
+            <h2 id="pg-name" style="font-size:20px;margin:0 0 15px;color:#fff;text-align:center;"></h2>
+            <div id="pg-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;"></div>
+            <div id="pg-loading" style="text-align:center;padding:30px;color:#555;display:none;"><i class="fa-solid fa-spinner fa-spin" style="font-size:24px;color:#e50914;"></i></div>
+            <div style="height:70px;"></div>
+        </div>
+    </div>
+
+    <!-- Person Latest News Modal -->
+    <div id="person-news-modal" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:221;overflow-y:auto;display:none;">
+        <div class="close-btn" onclick="document.getElementById('person-news-modal').style.display='none'"><i class="fa-solid fa-times"></i></div>
+        <div class="person-news-topbar">
+            <div>
+                <div id="pn-title" style="color:#fff;font-size:18px;font-weight:900;">Latest News</div>
+                <div id="pn-subtitle" style="color:#777;font-size:11px;margin-top:3px;"></div>
+            </div>
+        </div>
+        <div class="person-news-toolbar">
+            <button class="primary" onclick="refreshPersonNews(true)"><i class="fa-solid fa-rotate"></i> <span id="pn-refresh-label">Refresh</span></button>
+            <button id="pn-translate-all-btn" onclick="translateVisibleNewsCards()" style="display:none;"><i class="fa-solid fa-language"></i> ترجمه کارت‌ها</button>
+        </div>
+        <div id="pn-list"></div>
+        <div id="pn-loading" class="person-news-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin"></i><br><span id="pn-loading-text">Loading latest news...</span></div>
+        <div id="pn-empty" class="person-news-empty" style="display:none;"></div>
+        <div style="height:80px;"></div>
+    </div>
+
+    <!-- Person Article Reader Modal -->
+    <div id="person-article-modal" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:222;overflow-y:auto;display:none;">
+        <div class="close-btn" onclick="document.getElementById('person-article-modal').style.display='none'"><i class="fa-solid fa-times"></i></div>
+        <div class="person-news-topbar">
+            <div style="min-width:0;">
+                <div id="pa-title" style="color:#fff;font-size:16px;font-weight:900;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;"></div>
+                <div id="pa-meta" style="color:#777;font-size:11px;margin-top:4px;"></div>
+            </div>
+        </div>
+        <div class="person-news-toolbar">
+            <button class="primary" id="pa-translate-btn" onclick="translateCurrentArticleToFa()"><i class="fa-solid fa-language"></i> <span id="pa-translate-label">ترجمه به فارسی</span></button>
+            <button id="pa-original-btn" onclick="showCurrentArticleOriginal()" style="display:none;"><i class="fa-solid fa-file-lines"></i> <span id="pa-original-label">Show Original</span></button>
+            <button onclick="openCurrentArticleOriginal()"><i class="fa-solid fa-up-right-from-square"></i> <span id="pa-open-label">Open Source</span></button>
+        </div>
+        <img id="pa-image" class="person-article-hero" style="display:none;">
+        <div id="pa-loading" class="person-news-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin"></i><br><span id="pa-loading-text">Loading article...</span></div>
+        <div id="pa-content" class="person-article-body"></div>
+        <div id="pa-iframe-wrap" style="display:none;padding:0 12px 80px;"><iframe id="pa-iframe" class="person-article-iframe" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe></div>
+    </div>
+
+    <!-- Image Lightbox -->
+    <div id="img-lightbox" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:300;display:none;align-items:center;justify-content:center;" onclick="document.getElementById('img-lightbox').style.display='none'">
+        <img id="lightbox-img" src="" style="max-width:95%;max-height:90vh;object-fit:contain;border-radius:8px;">
+    </div>
+
+    <div id="person-works-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 210; overflow-y: auto; display: none;">
+        <div class="close-btn" onclick="document.getElementById('person-works-modal').style.display='none'"><i class="fa-solid fa-times"></i></div>
+        <div class="floating-close-btn" onclick="document.getElementById('person-works-modal').style.display='none'"><i class="fa-solid fa-times"></i></div>
+        <div style="padding:20px; margin-top:50px;">
+            <!-- Person Header -->
+            <div id="pw-header" style="display:flex;gap:14px;align-items:center;margin-bottom:18px;">
+                <img id="pw-profile-img" src="" style="width:80px;height:105px;object-fit:cover;border-radius:10px;flex-shrink:0;background:#111;" loading="lazy">
+                <div style="flex:1;">
+                    <h1 id="pw-name" style="font-size:22px;margin:0 0 12px;color:#fff;">Person Name</h1>
+                    <div style="display:flex;flex-direction:column;gap:8px;">
+                        <button id="pw-bio-btn" onclick="openPersonBio()" style="background:var(--primary,#e50914);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;cursor:pointer;text-align:left;display:flex;align-items:center;gap:8px;">
+                            <i class="fa-solid fa-user-circle"></i> <span id="pw-bio-btn-label">مشخصات و آشنایی</span>
+                        </button>
+                        <button id="pw-gallery-btn" onclick="openPersonGallery()" style="background:var(--card,#1a1a1a);color:#fff;border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;cursor:pointer;text-align:left;display:flex;align-items:center;gap:8px;">
+                            <i class="fa-solid fa-images"></i> <span id="pw-gallery-btn-label">گالری عکس‌ها</span>
+                        </button>
+                        <button id="pw-news-btn" onclick="openPersonNews()" style="background:var(--card,#1a1a1a);color:#fff;border:1px solid var(--primary,#e50914);border-radius:8px;padding:10px 14px;font-size:13px;font-weight:700;cursor:pointer;text-align:left;display:flex;align-items:center;gap:8px;">
+                            <i class="fa-solid fa-newspaper" style="color:var(--primary,#e50914);"></i> <span id="pw-news-btn-label">آخرین خبرها</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;margin:0 0 18px;padding:10px 12px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.10);border-radius:10px;">
+                <i class="fa-solid fa-arrow-down-wide-short" style="color:var(--primary,#e50914);"></i>
+                <label for="pw-sort-select" id="pw-sort-label" style="font-size:12px;color:#aaa;">مرتب‌سازی آثار</label>
+                <select id="pw-sort-select" onchange="applyPersonWorksSort()" style="margin-inline-start:auto;background:#171717;color:#fff;border:1px solid #444;border-radius:7px;padding:7px 9px;font-family:inherit;font-size:12px;outline:none;">
+                    <option value="random">🎲 تصادفی</option>
+                    <option value="newest">جدیدترین</option>
+                    <option value="oldest">قدیمی‌ترین</option>
+                    <option value="votes">بیشترین رأی</option>
+                </select>
+            </div>
+            <div class="section" id="pw-actor-works">
+                <div class="sec-head">
+                    <span class="sec-title" id="txt-pw-cast">Movies as Actor</span>
+                </div>
+                <div class="grid-container" id="pw-cast-grid"></div>
+            </div>
+            <div class="section" id="pw-director-works">
+                <div class="sec-head">
+                    <span class="sec-title" id="txt-pw-director">Movies as Director</span>
+                </div>
+                <div class="grid-container" id="pw-director-grid"></div>
+            </div>
+            <div style="height:70px;"></div>
+        </div>
+    </div>
+    <div id="fn-title-info-modal" onclick="if(event.target===this) closeTitleInfo()" aria-hidden="true">
+        <div class="fn-title-info-sheet" role="dialog" aria-modal="true" aria-labelledby="fn-title-info-heading">
+            <div class="fn-title-info-head">
+                <div id="fn-title-info-heading" class="fn-title-info-title"></div>
+                <div class="fn-title-info-close" onclick="closeTitleInfo()" aria-label="Close"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div id="fn-title-info-grid" class="fn-title-info-grid"></div>
+        </div>
+    </div>
+    <div id="modal">
+        <div class="close-btn" id="modal-close-btn" onclick="fnCloseDetailModal()"><i class="fa-solid fa-times"></i></div>
+        <!-- Floating Close Button (always visible on scroll) -->
+        <div class="floating-close-btn" id="modal-floating-close" onclick="fnCloseDetailModal()"><i class="fa-solid fa-times"></i></div>
+        <div class="hero">
+            <img id="d-img" class="backdrop" src="" loading="lazy">
+            <div style="position:absolute; bottom:0; left:0; width:100%; height:100px; background:linear-gradient(to top, #000, transparent); z-index:2;"></div>
+        </div>
+        
+        <div class="info-box">
+            <div class="modal-header-row">
+                <div style="flex:1;min-width:0;">
+                    <h1 id="d-title" class="m-title">Title</h1>
+                </div>
+                <!-- Right side: play on top, bookmark+fav below -->
+                <div style="display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;padding-right:2px;">
+                    <!-- PLAY BUTTON — above bookmark & fav -->
+                    <div style="display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;" onclick="openPlayerModal()">
+                        <div class="hero-play-circle" style="width:52px;height:52px;">
+                            <i class="fa-solid fa-play" style="font-size:19px;margin-left:4px;"></i>
+                        </div>
+                        <span id="txt-hero-play" style="font-size:10px;font-weight:800;color:#f5c518;white-space:nowrap;letter-spacing:0.3px;">پخش</span>
+                    </div>
+                    <!-- Bookmark + Fav row -->
+                    <div id="modal-header-actions">
+                        <i id="title-info-btn" class="fa-solid fa-circle-info" onclick="openTitleInfo()" title="Title Info" aria-label="Title Info" style="color:var(--primary,#e50914);cursor:pointer;transition:color 0.2s,transform 0.2s;"></i>
+                        <i id="watchlist-btn" class="fa-regular fa-bookmark" onclick="toggleWatchlist()" title="Watch Later" style="color:#777;cursor:pointer;transition:color 0.2s;"></i>
+                        <i id="fav-btn" class="fa-regular fa-heart fav-btn" onclick="toggleFav()"></i>
+                        <i id="compare-btn" class="fa-solid fa-code-compare" onclick="openComparePicker()" title="Compare with another" style="color:#777;cursor:pointer;transition:color 0.2s;"></i>
+                        <i id="share-media-btn" class="fa-solid fa-share-nodes" onclick="shareMedia()" title="Share" aria-label="Share" style="color:#fff;cursor:pointer;transition:color 0.2s,transform 0.2s;"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="d-title-fa" style="font-size:13px;color:#a78bfa;margin-top:0;margin-bottom:2px;display:none;font-weight:600;direction:rtl;"></div>
+            <div id="d-title-secondary" style="font-size:11px;color:#777;margin-top:0;margin-bottom:2px;display:none;"></div>
+            <div class="m-meta">
+                <span id="d-year">2025</span>
+                <span class="imdb-badge">IMDb <span id="d-rate">8.0</span></span>
+                <span><i class="fa-solid fa-users" style="color:#aaa; margin-right:5px;"></i><span id="d-count">10k</span></span>
+            </div>
+            
+            <!-- RUNTIME & AWARDS -->
+            <div class="meta-extra-row" id="meta-extra-row">
+                <!-- filled by JS -->
+            </div>
+
+            <!-- WHERE TO WATCH (LEGAL) -->
+            <div id="wtw-btn" onclick="openWhereToWatch()" style="display:flex;align-items:center;justify-content:center;gap:8px;background:var(--card,#1c1c1c);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:12px;margin-bottom:14px;cursor:pointer;">
+                <i class="fa-solid fa-tv" style="color:var(--primary,#E50914);font-size:15px;"></i>
+                <span id="wtw-btn-txt" style="font-size:13px;font-weight:800;color:var(--text,#fff);">Where to Watch (Legal)</span>
+            </div>
+            
+            <p id="d-desc" style="color:#bbb; font-size:13px; line-height:1.8; margin-bottom:10px; text-align:justify;"></p>
+            <!-- Translate description button: only shows in FA mode when desc is English -->
+            <div id="translate-desc-btn" onclick="translateDescBtn()" style="display:none; align-items:center; gap:6px; margin-bottom:16px; padding:8px 14px; background:rgba(66,133,244,0.1); border:1px solid rgba(66,133,244,0.3); border-radius:20px; cursor:pointer; width:fit-content; transition:0.2s;">
+                <i class="fa-solid fa-language" style="color:#7eb8f7; font-size:13px;"></i>
+                <span style="font-size:12px; color:#7eb8f7; font-weight:600;">ترجمه به فارسی</span>
+            </div>
+            
+            <!-- ===== AI ASSISTANT BOX ===== -->
+            <div class="ai-box" id="ai-box">
+                <div class="ai-box-header">
+                    <div class="ai-box-title">
+                        <div class="ai-gemini-icon">✦</div>
+                        <span id="ai-box-label">AI Assistant</span>
+                    </div>
+                    <div class="ai-fullscreen-btn" onclick="openAIFullscreen()" title="Fullscreen">
+                        <i class="fa-solid fa-expand"></i>
+                    </div>
+                </div>
+                <!-- Current title context badge -->
+                <div id="ai-context-badge" style="display:none;padding:6px 12px 0;font-size:11px;color:#888;direction:auto;"></div>
+                <!-- Quick Questions -->
+                <div class="ai-quick-questions" id="ai-quick-btns">
+                    <!-- filled by JS based on lang -->
+                </div>
+                <!-- Chat Area -->
+                <div class="ai-chat-area" id="ai-chat-area">
+                    <!-- Messages appear here -->
+                </div>
+                <!-- Input -->
+                <div class="ai-input-row">
+                    <input type="text" class="ai-input" id="ai-input" placeholder="سوال بپرس..." 
+                           onkeydown="if(event.key==='Enter') sendAIMessage()">
+                    <button class="ai-send-btn" id="ai-send-btn" onclick="sendAIMessage()">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- ===== END AI BOX ===== -->
+            
+            <!-- NEW: COUNTRIES SECTION -->
+            <div class="countries-section" id="countries-section" style="display:none;">
+                <div class="box-h" style="margin-bottom:10px;"><i class="fa-solid fa-flag"></i> <span id="txt-countries">Production Countries</span></div>
+                <div class="countries-row" id="countries-row"></div>
+            </div>
+            
+            <!-- NEW: GENRES SECTION -->
+            <div class="genres-section" id="genres-section" style="display:none;">
+                <div class="box-h" style="margin-bottom:10px;"><i class="fa-solid fa-masks-theater"></i> <span id="txt-genres">Genres</span></div>
+                <div class="genres-row" id="genres-row"></div>
+            </div>
+            
+            <!-- NEW TRAILER BUTTON (Above Servers) -->
+            <button id="new-trailer-btn" class="trailer-btn" onclick="playTrailer()">
+                <i class="fa-solid fa-play"></i> <span id="txt-trailer-btn">تریلرها / Trailers</span>
+            </button>
+            
+            <!-- BACKDROPS + POSTERS BUTTONS -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+                <button id="backdrops-btn" class="screenshots-btn" onclick="openBackdrops()" style="margin-bottom:0;">
+                    <i class="fa-solid fa-panorama"></i> <span id="txt-backdrops">تصاویر / Backdrops</span>
+                </button>
+                <button id="posters-btn" class="screenshots-btn" onclick="openPosters()" style="margin-bottom:0;background:linear-gradient(135deg,#0a1a2e,#0d2d4d);border-color:rgba(56,189,248,0.4);color:#38bdf8;">
+                    <i class="fa-solid fa-film"></i> <span id="txt-posters">پوسترها / Posters</span>
+                </button>
+            </div>
+
+            <!-- SOUNDTRACKS + SCENES ROW -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+                <button id="soundtracks-btn" class="soundtracks-btn" onclick="openSoundtracks()" style="margin-bottom:0;background:linear-gradient(135deg,#1e003d,#2d0060);border-color:rgba(168,85,247,0.5);">
+                    <i class="fa-solid fa-music"></i> <span id="txt-soundtracks">Soundtracks</span>
+                </button>
+                <button id="scenes-btn" class="soundtracks-btn" onclick="openScenes()" style="margin-bottom:0;background:linear-gradient(135deg,#003333,#004d40);border-color:rgba(0,200,180,0.5);color:#00e5cc;">
+                    <i class="fa-solid fa-clapperboard"></i> <span id="txt-scenes">ادیت‌ها / Scenes</span>
+                </button>
+            </div>
+
+            <!-- BROADCAST BUTTON (small icon) -->
+            <button class="broadcast-btn-icon" onclick="openBroadcastModal()" id="broadcast-btn-el" title="Cast to Screen">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M1 18v3h3c0-1.66-1.34-3-3-3zm0-4v2c2.76 0 5 2.24 5 5h2c0-3.87-3.13-7-7-7zm18-7H5c-1.1 0-2 .9-2 2v3h2v-3h14v12h-5v2h5c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-18 11c0 .55.45 1 1 1s1-.45 1-1-.45-1-1-1-1 .45-1 1z"/>
+                </svg>
+            </button>
+
+            <div class="cast-section">
+                <div class="cast-head" id="txt-cast">Cast & Crew</div>
+                <div class="cast-row" id="d-directors" style="margin-bottom: 20px;"></div>
+                <div class="cast-row" id="d-cast"></div>
+            </div>
+            
+            <!-- INTERNAL DOWNLOAD SECTION -->
+            <div class="internal-dl-box" id="internal-dl-section">
+                <div class="internal-dl-header">
+                    <i class="fa-solid fa-cloud-arrow-down"></i>
+                    <span id="txt-internal-dl">دانلود داخلی</span>
+                    <span class="internal-dl-badge" id="txt-internal-dl-badge">DIRECT</span>
+                </div>
+                <div class="internal-dl-grid" id="internal-dl-grid">
+                    <!-- Buttons will be rendered by JS -->
+                </div>
+                <p class="internal-dl-note" id="txt-internal-dl-note">
+                    دانلود مستقیم بدون نیاز به باز کردن پخشگر — فایل در حافظه گوشی ذخیره می‌شود
+                </p>
+            </div>
+            <!-- PUBLIC DOMAIN FREE DOWNLOAD BOX (Archive.org — legal, copyright-expired titles only) -->
+            <div class="box" id="pd-dl-box" style="display:none;">
+                <div class="box-h"><i class="fa-solid fa-cloud-arrow-down"></i> <span id="pd-dl-title">دانلود رایگان و قانونی (Public Domain)</span></div>
+                <div id="pd-dl-status" style="padding:10px 12px;font-size:12px;color:#888;"></div>
+                <div id="pd-dl-grid" style="display:none;grid-template-columns:1fr;gap:8px;padding:0 12px 8px;"></div>
+                <p style="padding:0 12px 12px;font-size:11px;color:#666;line-height:1.6;" id="pd-dl-note">این فایل‌ها از آرشیو عمومی Archive.org هستند؛ چون کپی‌رایت این اثر منقضی شده، دانلود کاملاً رایگان، قانونی و بدون نیاز به ثبت‌نام است.</p>
+            </div>
+            <div id="tv-ui" class="box" style="display:none;">
+                <div class="box-h">
+                    <i class="fa-solid fa-tv"></i>
+                    <span id="txt-ep">Select Episode</span>
+                    <span style="margin-right:auto; display:flex; gap:10px; font-size:10px; align-items:center; padding-right:4px;">
+                        <span style="display:flex;align-items:center;gap:3px;color:#f5c518;font-weight:700;"><span style="font-size:8px;font-weight:800;letter-spacing:0.5px;">IMDb</span></span>
+                        <span style="display:flex;align-items:center;gap:3px;color:#a78bfa;"><i class="fa-solid fa-play" style="font-size:9px;"></i> <span id="txt-ep-play">Play</span></span>
+                        <span style="display:flex;align-items:center;gap:3px;color:#38bdf8;"><i class="fa-solid fa-download" style="font-size:9px;"></i> <span id="txt-ep-dl">DL</span></span>
+                    </span>
+                </div>
+                <select id="season-dd" class="season-sel" onchange="loadEp(this.value)"></select>
+                <div id="ep-list" class="ep-list"></div>
+            </div>
+            <!-- Episode subtitle sources stay directly below the episode box, outside its expandable area. -->
+            <div id="ep-sub-bar-fixed" class="ep-sub-bar-split" style="display:none;margin-top:-15px;margin-bottom:18px;border-radius:8px;overflow:hidden;">
+                <a id="ep-subsource-link" href="#" target="_blank" class="ep-sub-bar ep-sub-half">
+                    <i class="fa-solid fa-closed-captioning"></i>
+                    <span>Subsource</span>
+                    <small>Subsource.net</small>
+                </a>
+                <a id="ep-subf2m-link" href="#" target="_blank" class="ep-sub-bar ep-sub-half">
+                    <i class="fa-solid fa-closed-captioning"></i>
+                    <span>sub2fm</span>
+                    <small>subf2m.co</small>
+                </a>
+            </div>
+            <div class="box" id="download-links-box">
+                <div class="box-h"><i class="fa-solid fa-download"></i> <span id="txt-dl">Download Links</span></div>
+                <div id="dl-container"></div>
+            </div>
+            
+            <!-- SIMILAR TITLES SECTION -->
+            <div class="section" id="similar-section" style="display:none; margin-top:30px;">
+                <div class="sec-head">
+                    <span class="sec-title"><i class="fa-solid fa-film"></i> <span id="txt-similar">Similar Titles</span></span>
+                </div>
+                <div class="row-scroll" id="similar-row"></div>
+            </div>
+            
+            <!-- PERSONAL RATING -->
+            <div class="personal-rating-section" id="personal-rating-section">
+                <div class="personal-rating-label" id="txt-my-rating">⭐ امتیاز من</div>
+                <div class="star-rating" id="star-rating-row">
+                    <span class="star-btn" onclick="setPersonalRating(1)" id="star-1">☆</span>
+                    <span class="star-btn" onclick="setPersonalRating(2)" id="star-2">☆</span>
+                    <span class="star-btn" onclick="setPersonalRating(3)" id="star-3">☆</span>
+                    <span class="star-btn" onclick="setPersonalRating(4)" id="star-4">☆</span>
+                    <span class="star-btn" onclick="setPersonalRating(5)" id="star-5">☆</span>
+                    <span class="personal-rating-clear" onclick="clearPersonalRating()" id="txt-clear-rating">حذف</span>
+                </div>
+            </div>
+            <!-- OPINION CHIPS (shown after rating) -->
+            <div id="opinion-chips" style="display:none;margin-top:10px;padding:12px;background:rgba(255,255,255,0.04);border-radius:12px;border:1px solid rgba(255,255,255,0.08);"></div>
+            
+            <!-- KEYWORD TAGS - Always English -->
+            <div class="keywords-section" id="keywords-section" style="display:none;">
+                <div class="keywords-label" id="txt-keywords-label">🏷️ Keywords</div>
+                <div id="keywords-row"></div>
+            </div>
+            
+            <!-- BUDGET & BOX OFFICE - Enhanced -->
+            <div class="budget-box" id="budget-box" style="display:none;">
+                <div class="budget-item" id="budget-item">
+                    <div class="budget-label"><i class="fa-solid fa-sack-dollar" style="color:#4ade80;margin-left:4px;"></i> <span id="txt-budget">بودجه</span></div>
+                    <div class="budget-value" id="budget-value" style="color:#4ade80;">—</div>
+                </div>
+                <div class="budget-item" id="revenue-item">
+                    <div class="budget-label"><i class="fa-solid fa-chart-line" style="color:#f5c518;margin-left:4px;"></i> <span id="txt-revenue">فروش جهانی</span></div>
+                    <div class="budget-value" id="revenue-value" style="color:#f5c518;">—</div>
+                </div>
+                <div class="budget-item" id="profit-item" style="display:none;">
+                    <div class="budget-label"><i class="fa-solid fa-trophy" style="color:#e50914;margin-left:4px;"></i> <span id="txt-profit">سود خالص</span></div>
+                    <div class="budget-value" id="profit-value" style="color:#e50914;">—</div>
+                </div>
+            </div>
+
+            <!-- REVIEWS BUTTON -->
+            <button onclick="openReviews()" style="width:100%;padding:14px;background:linear-gradient(135deg,#1a1400,#2d2200);border:1px solid rgba(245,197,24,0.3);border-radius:12px;color:white;font-size:14px;font-weight:bold;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px;transition:0.2s;" onmousedown="this.style.transform='scale(0.97)'" onmouseup="this.style.transform=''" ontouchstart="this.style.transform='scale(0.97)'" ontouchend="this.style.transform=''">
+                <i class="fa-solid fa-comments" style="color:#f5c518;font-size:16px;"></i>
+                <span id="txt-reviews-btn">نظرات کاربران</span>
+                <span id="reviews-count-badge" style="background:rgba(245,197,24,0.2);border:1px solid rgba(245,197,24,0.4);border-radius:20px;padding:2px 10px;font-size:11px;color:#f5c518;display:none;"></span>
+            </button>
+            
+            <!-- COLLECTION / FRANCHISE -->
+            <div class="collection-section" id="collection-section" style="display:none;">
+                <div class="collection-label" id="txt-collection-label">🎬 مجموعه</div>
+                <div class="collection-name" id="collection-name"></div>
+                <div class="row-scroll" id="collection-row"></div>
+            </div>
+        </div>
+    </div>
+    <!-- =================== PERSONALITY ANALYSIS PAGE =================== -->
+    <div id="personality-page">
+        <div class="personality-header">
+            <div class="personality-header-title" id="txt-personality-header">🧠 تحلیل شخصیت</div>
+            <div style="width:36px;height:36px;background:rgba(138,43,226,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid rgba(138,43,226,0.4);" onclick="closePersonalityPage()">
+                <i class="fa-solid fa-times" style="color:#cc88ff;"></i>
+            </div>
+        </div>
+        <div class="personality-content" id="personality-content">
+            <!-- Filled by JS -->
+        </div>
+    </div>
+    <!-- =================== END PERSONALITY PAGE =================== -->
+
+    <div id="player-fs">
+        <div id="player-topbar">
+            <div id="player-server-tabs-wrap">
+                <div id="player-server-tabs"></div>
+            </div>
+            <span id="player-ep-label" style="display:none;"></span>
+        </div>
+        <!-- Control bar: one row below topbar, slightly from corner -->
+        <div id="player-ctrl-bar">
+            <button id="player-prev-ep-btn" class="player-ctrl-tab" onclick="playerPrevEpisode()" title="Previous Episode" style="display:none;">
+                <i class="fa-solid fa-backward-step"></i>
+            </button>
+            <button id="player-ep-toggle" class="player-ctrl-tab" onclick="togglePlayerEpMenu()" title="Episodes" style="display:none;">
+                <i class="fa-solid fa-list"></i>
+            </button>
+            <button id="player-next-ep-btn" class="player-ctrl-tab" onclick="playerNextEpisode()" title="Next Episode" style="display:none;">
+                <i class="fa-solid fa-forward-step"></i>
+            </button>
+            <button id="player-fullscreen-btn" class="player-ctrl-tab" onclick="togglePlayerFullscreen()" title="Fullscreen">
+                <i class="fa-solid fa-expand" id="player-fs-icon"></i>
+            </button>
+            <button id="player-pip-btn" class="player-ctrl-tab" onclick="togglePlayerPiP()" title="Picture in Picture">
+                <i class="fa-solid fa-window-restore" id="player-pip-icon"></i>
+            </button>
+            <button id="player-close-tab" class="player-ctrl-tab" onclick="closePlayer()" title="Close">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </button>
+        </div>
+        <!-- Mini PiP overlay controls -->
+        <div id="mini-pip-controls" aria-label="Picture in Picture controls">
+            <div class="mpip-top" data-fn-pip-drag>
+                <button class="mpip-btn" onclick="restoreFromPiP()" title="Expand" aria-label="Expand player"><i class="fa-solid fa-expand"></i></button>
+                <button class="mpip-btn" onclick="closePlayer()" title="Close" aria-label="Close player"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="mpip-resize-handle" data-fn-pip-resize role="separator" aria-label="Resize picture in picture"></div>
+        </div>
+        <iframe id="iframe" src="" 
+            allowfullscreen 
+            allow="autoplay; fullscreen; picture-in-picture; encrypted-media; accelerometer; gyroscope"
+            referrerpolicy="no-referrer"
+        ></iframe>
+        <div id="player-tap-catcher"></div>
+        <div id="vidsrc-hint" onclick="this.classList.remove('show')">
+            <span id="vidsrc-hint-text"></span>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <!-- In-player Episode Selector (TV series) -->
+        <div id="player-ep-backdrop" onclick="togglePlayerEpMenu()"></div>
+        <div id="player-ep-menu">
+            <div id="player-ep-header">
+                <select id="player-season-select" onchange="loadPlayerSeason(this.value)"></select>
+                <button onclick="togglePlayerEpMenu()" style="background:rgba(255,255,255,0.08);border:none;color:#aaa;padding:7px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-family:inherit;flex-shrink:0;">
+                    <span id="txt-pep-close">بستن</span>
+                </button>
+            </div>
+            <div id="player-ep-list"></div>
+        </div>
+    </div>
+    
+    <!-- TRAILER PLAYER MODAL (YouTube) - Carousel Style -->
+    <div id="trailer-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#0a0a0a; z-index:500; flex-direction:column; overflow-y:auto;">
+
+        <!-- هدر -->
+        <div style="width:100%; display:flex; align-items:center; justify-content:space-between; padding:14px 16px; background:#0a0a0a; position:sticky; top:0; z-index:503; border-bottom:1px solid #1e1e1e;">
+            <button onclick="closeTrailer()" style="background:#1e1e1e; color:white; border:none; padding:8px 16px; border-radius:20px; font-size:13px; cursor:pointer; font-family:inherit; display:flex; align-items:center; gap:6px;">
+                <span>✕</span> <span id="trailer-close-label">بستن</span>
+            </button>
+            <div id="trailer-modal-title" style="color:#fff; font-size:14px; font-weight:bold; text-align:center; flex:1; padding:0 10px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;"></div>
+            <div style="width:70px;"></div>
+        </div>
+
+        <!-- پلیر داخلی - وقتی کاربر انتخاب کنه -->
+        <div id="trailer-inline-player" style="display:none; width:100%; background:#000;">
+            <div style="position:relative; width:100%; padding-top:56.25%;">
+                <iframe id="trailer-iframe" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="no-referrer"></iframe>
+            </div>
+            <button onclick="closeInlinePlayer()" style="width:100%; background:#1a1a1a; color:#aaa; border:none; border-top:1px solid #222; padding:10px; font-size:12px; cursor:pointer; font-family:inherit;">
+                ✕ <span id="close-player-label">بستن پلیر</span>
+            </button>
+        </div>
+
+        <!-- لیست تریلرها -->
+        <div id="trailer-list-container" style="width:100%; padding:12px 14px; display:flex; flex-direction:column; gap:10px;">
+            <!-- آیتم‌ها اینجا ساخته میشن -->
+        </div>
+
+        <!-- وقتی هیچ تریلری نباشه -->
+        <div id="trailer-empty-msg" style="display:none; flex-direction:column; align-items:center; justify-content:center; padding:60px 20px; gap:14px;">
+            <div style="font-size:48px;">🎬</div>
+            <div style="color:#666; font-size:14px; text-align:center;" id="trailer-empty-text">تریلری یافت نشد</div>
+        </div>
+    </div>
+    
+    <!-- BACKDROPS GALLERY MODAL -->
+    <div id="backdrops-modal" style="display:none; flex-direction:column; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.97); z-index:310; overflow-y:auto;">
+        <div class="ss-header">
+            <div style="width:36px;"></div>
+            <div class="ss-title" id="backdrops-modal-title">🖼️ Backdrops</div>
+            <div class="ss-close" onclick="closeBackdrops()"><i class="fa-solid fa-times"></i></div>
+        </div>
+        <div class="ss-grid" id="backdrops-grid">
+            <div class="ss-loading"><i class="fa-solid fa-spinner"></i><p>Loading...</p></div>
+        </div>
+    </div>
+
+    <!-- POSTERS GALLERY MODAL -->
+    <div id="posters-modal" style="display:none; flex-direction:column; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.97); z-index:310; overflow-y:auto;">
+        <div class="ss-header">
+            <div style="width:36px;"></div>
+            <div class="ss-title" id="posters-modal-title" style="color:#38bdf8;">🎬 Posters</div>
+            <div class="ss-close" onclick="closePosters()"><i class="fa-solid fa-times"></i></div>
+        </div>
+        <div style="padding:15px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;" id="posters-grid">
+            <div class="ss-loading" style="grid-column:1/-1;"><i class="fa-solid fa-spinner"></i><p>Loading...</p></div>
+        </div>
+    </div>
+
+    <!-- REVIEWS MODAL -->
+    <div id="reviews-modal" style="display:none;position:fixed;inset:0;background:#080808;z-index:310;flex-direction:column;overflow:hidden;">
+        <!-- Header -->
+        <div style="position:sticky;top:0;background:#0a0a0a;z-index:2;padding:11px 14px;border-bottom:1px solid #1a1a1a;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
+            <button onclick="closeReviews()" style="background:#1e1e1e;color:white;border:none;padding:7px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-family:inherit;">✕</button>
+            <div id="reviews-modal-title" style="color:#f5c518;font-size:14px;font-weight:bold;text-align:center;flex:1;padding:0 8px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">💬 نظرات</div>
+            <div style="width:46px;"></div>
+        </div>
+        <!-- Scores Row -->
+        <div style="padding:12px 14px;background:#0a0a14;border-bottom:1px solid #111;flex-shrink:0;display:flex;gap:12px;align-items:center;justify-content:center;overflow-x:auto;">
+            <!-- TMDB -->
+            <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+                <div style="position:relative;width:52px;height:52px;">
+                    <svg width="52" height="52" viewBox="0 0 52 52" style="transform:rotate(-90deg);">
+                        <circle cx="26" cy="26" r="21" fill="none" stroke="#0a1a2e" stroke-width="5"/>
+                        <circle id="score-ring" cx="26" cy="26" r="21" fill="none" stroke="#21d07a" stroke-width="5"
+                            stroke-dasharray="131.9" stroke-dashoffset="131.9" stroke-linecap="round"
+                            style="transition:stroke-dashoffset 1s ease,stroke 0.5s;"/>
+                    </svg>
+                    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+                        <span id="score-percent-text" style="font-size:12px;font-weight:900;color:white;">—</span>
+                    </div>
+                </div>
+                <div><div style="font-size:10px;font-weight:800;color:#01b4e4;">TMDB</div><div id="score-vote-count" style="font-size:10px;color:#444;"></div></div>
+            </div>
+            <div style="width:1px;height:36px;background:#1a1a1a;flex-shrink:0;"></div>
+            <!-- IMDb -->
+            <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+                <div style="position:relative;width:52px;height:52px;">
+                    <svg width="52" height="52" viewBox="0 0 52 52" style="transform:rotate(-90deg);">
+                        <circle cx="26" cy="26" r="21" fill="none" stroke="#1a1400" stroke-width="5"/>
+                        <circle id="imdb-ring" cx="26" cy="26" r="21" fill="none" stroke="#f5c518" stroke-width="5"
+                            stroke-dasharray="131.9" stroke-dashoffset="131.9" stroke-linecap="round"
+                            style="transition:stroke-dashoffset 1s ease;"/>
+                    </svg>
+                    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+                        <span id="imdb-score-txt" style="font-size:12px;font-weight:900;color:white;">—</span>
+                    </div>
+                </div>
+                <div><div style="font-size:10px;font-weight:800;color:#f5c518;">IMDb</div><div id="imdb-vote-txt" style="font-size:10px;color:#444;"></div></div>
+            </div>
+        </div>
+        <!-- Source Tabs -->
+        <div style="display:flex;border-bottom:1px solid #111;flex-shrink:0;" id="review-tabs">
+            <button id="rtab-tmdb" onclick="_rTab('tmdb')" style="flex:1;padding:10px 4px;background:#01b4e4;border:none;color:#000;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;">TMDB Reviews</button>
+        </div>
+        <!-- Reviews List -->
+        <div id="reviews-list" style="flex:1;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:10px;"></div>
+    </div>
+
+    <!-- SOUNDTRACKS MODAL -->
+    <div id="soundtracks-modal">
+        <div class="st-bg" id="st-bg"></div>
+        <div class="st-overlay"></div>
+        <div class="st-header">
+            <div class="st-close" onclick="closeSoundtracks()"><i class="fa-solid fa-times"></i></div>
+            <div class="st-title" id="st-modal-title">🎵 Soundtracks</div>
+            <div style="width:36px;"></div>
+        </div>
+        <div class="st-content" id="st-content">
+            <div class="st-loading"><i class="fa-solid fa-compact-disc"></i><p style="color:#a855f7;">Loading soundtracks...</p></div>
+        </div>
+        <div id="st-yt-embed" style="display:none;padding:0 15px 10px;position:relative;z-index:2;"></div>
+        <div class="st-mini-player" id="st-mini-player" style="display:none;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+                <div id="st-cover-art" style="width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg,#2d0060,#4a0090);display:flex;align-items:center;justify-content:center;flex-shrink:0;background-size:cover;background-position:center;overflow:hidden;">
+                    <i class="fa-solid fa-music" style="font-size:22px;color:#a855f7;"></i>
+                </div>
+                <div style="flex:1;min-width:0;">
+                    <div class="st-now-playing-label" id="st-np-label">🎵 Now Playing</div>
+                    <div class="st-now-playing-title" id="st-np-title">-</div>
+                    <div class="st-now-playing-artist" id="st-np-artist">-</div>
+                </div>
+            </div>
+            <div class="st-progress-bar-wrap" onclick="stSeek(event)">
+                <div class="st-progress-bar-fill" id="st-progress-fill"></div>
+            </div>
+            <div class="st-time-row">
+                <span id="st-time-cur">0:00</span>
+                <span id="st-time-total">0:00</span>
+            </div>
+            <div class="st-controls">
+                <div class="st-ctrl-btn" onclick="stPrev()" title="Previous"><i class="fa-solid fa-backward-step"></i></div>
+                <button class="st-play-pause-btn" id="st-play-pause-btn" onclick="stTogglePlay()">
+                    <i class="fa-solid fa-play" id="st-pp-icon"></i>
+                </button>
+                <div class="st-ctrl-btn" onclick="stNext()" title="Next"><i class="fa-solid fa-forward-step"></i></div>
+            </div>
+        </div>
+    </div>
+    <!-- END SOUNDTRACKS MODAL -->
+    
+    <!-- LIGHTBOX -->
+    <div id="ss-lightbox" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.98); z-index:320; align-items:center; justify-content:center; flex-direction:column;">
+        <div class="ss-lightbox-close"><i class="fa-solid fa-times"></i></div>
+        <img id="ss-lightbox-img" class="ss-lightbox-img" src="" alt="">
+    </div>
+    
+    <!-- DOWNLOAD OPTIONS MODAL -->
+    <div id="download-options-modal">
+        <div class="download-options-sheet">
+            <div class="download-options-header">
+                <div class="download-options-title" id="download-title">انتخاب روش دانلود</div>
+                <div class="download-options-subtitle" id="download-subtitle">یک گزینه را انتخاب کنید</div>
+            </div>
+            
+            <div class="download-option option-direct" onclick="downloadDirect()">
+                <div class="download-option-icon">
+                    <i class="fas fa-download"></i>
+                </div>
+                <div class="download-option-text">
+                    <div class="download-option-label" id="dl-direct-label">دانلود مستقیم</div>
+                    <div class="download-option-desc" id="dl-direct-desc">دانلود با مرورگر پیش‌فرض</div>
+                </div>
+                <i class="fas fa-chevron-left" style="color:#666;"></i>
+            </div>
+            
+            <div class="download-option option-adm" onclick="downloadWithADM()">
+                <div class="download-option-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="download-option-text">
+                    <div class="download-option-label" id="dl-adm-label">دانلود با ADM</div>
+                    <div class="download-option-desc" id="dl-adm-desc">استفاده از Advanced Download Manager</div>
+                </div>
+                <i class="fas fa-chevron-left" style="color:#666;"></i>
+            </div>
+            
+            <div class="download-option option-other" onclick="downloadWithOther()">
+                <div class="download-option-icon">
+                    <i class="fas fa-th"></i>
+                </div>
+                <div class="download-option-text">
+                    <div class="download-option-label" id="dl-other-label">دانلود با سایر برنامه‌ها</div>
+                    <div class="download-option-desc" id="dl-other-desc">انتخاب از دانلودرهای نصب شده</div>
+                </div>
+                <i class="fas fa-chevron-left" style="color:#666;"></i>
+            </div>
+            
+            <div class="download-close-btn" onclick="closeDownloadOptions()" id="dl-close-btn">بستن</div>
+        </div>
+    </div>
+    
+    <script src="js/inline-02.js"></script>
+
+    
+    <!-- ===== AI FULLSCREEN OVERLAY ===== -->
+    <div id="ai-fullscreen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#050510;z-index:500;display:none;flex-direction:column;">
+        <div style="padding:16px 20px;border-bottom:1px solid rgba(66,133,244,0.2);display:flex;align-items:center;justify-content:space-between;background:#07071a;flex-shrink:0;">
+            <div>
+                <div style="font-size:15px;font-weight:bold;color:#7eb8f7;display:flex;align-items:center;gap:8px;">
+                    <div style="width:24px;height:24px;background:linear-gradient(135deg,#7c3aed,#4285f4,#06b6d4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;color:white;font-weight:bold;">✦</div>
+                    <span id="ai-fs-title-text">دستیار هوشمند</span>
+                </div>
+                <div id="ai-fs-context" style="font-size:11px;color:#555;margin-top:3px;"></div>
+            </div>
+            <div onclick="closeAIFullscreen()" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:white;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;">
+                <i class="fa-solid fa-compress"></i>
+            </div>
+        </div>
+        <div class="ai-fs-chat" id="ai-fs-chat" style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth;"></div>
+        <div style="padding:12px 16px;border-top:1px solid rgba(66,133,244,0.15);background:#07071a;flex-shrink:0;">
+            <div id="ai-fs-quick-btns" style="display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin-bottom:10px;"></div>
+            <div style="display:flex;gap:8px;align-items:center;">
+                <input type="text" class="ai-fs-input" id="ai-fs-input" placeholder="سوال بپرس..."
+                       style="flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(66,133,244,0.25);color:white;border-radius:20px;padding:11px 16px;font-size:13px;outline:none;font-family:'Vazirmatn',sans-serif;"
+                       onkeydown="if(event.key==='Enter') sendAIMessage(true)">
+                <button id="ai-fs-send-btn" onclick="sendAIMessage(true)"
+                        style="width:42px;height:42px;border-radius:50%;border:none;background:linear-gradient(135deg,#4285f4,#1a6cd4);color:white;font-size:16px;cursor:pointer;transition:0.2s;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- ===== END AI FULLSCREEN ===== -->
+    
+    
+
+    <!-- DETAILED STATS MODAL -->
+    <div id="detailed-stats-modal" style="display:none;position:fixed;inset:0;background:#000;z-index:300;overflow-y:auto;flex-direction:column;">
+        <div style="position:sticky;top:0;background:#0a0a0a;z-index:2;padding:15px 16px;border-bottom:1px solid #222;display:flex;align-items:center;justify-content:space-between;">
+            <button onclick="closeDetailedStats()" style="background:#1e1e1e;color:white;border:none;padding:8px 16px;border-radius:20px;font-size:13px;cursor:pointer;font-family:inherit;">&#x2715; <span id="txt-close-stats">&#x0628;&#x0633;&#x062A;&#x0646;</span></button>
+            <div style="color:white;font-size:15px;font-weight:bold;" id="txt-stats-modal-title">&#x1F4CA; &#x0622;&#x0645;&#x0627;&#x0631; &#x0633;&#x06CC;&#x0646;&#x0645;&#x0627;&#x06CC;&#x06CC;</div>
+            <div style="width:70px;"></div>
+        </div>
+        <div id="detailed-stats-content" style="padding:16px;"></div>
+    </div>
+    <!-- END DETAILED STATS MODAL -->
+
+
+    <!-- SCENES & EDITS MODAL -->
+    <div id="scenes-modal" style="display:none;position:fixed;inset:0;background:#080808;z-index:400;flex-direction:column;overflow:hidden;">
+        <div style="position:sticky;top:0;background:#0a0a0a;z-index:2;padding:13px 16px;border-bottom:1px solid #1a1a1a;display:flex;align-items:center;justify-content:space-between;">
+            <button onclick="closeScenes()" style="background:#1e1e1e;color:white;border:none;padding:8px 16px;border-radius:20px;font-size:13px;cursor:pointer;font-family:inherit;">&#x2715; <span id="txt-scenes-close">بستن / Close</span></button>
+            <div id="scenes-modal-title" style="color:#00e5cc;font-size:14px;font-weight:bold;text-align:center;flex:1;padding:0 8px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;"></div>
+            <div style="width:70px;"></div>
+        </div>
+        <!-- Inline player -->
+        <div id="scenes-inline-player" style="display:none;background:#000;width:100%;flex-shrink:0;">
+            <div style="position:relative;width:100%;padding-top:56.25%;">
+                <iframe id="scenes-iframe" style="position:absolute;inset:0;width:100%;height:100%;border:none;" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <button onclick="closeScenesPlayer()" style="width:100%;background:#1a1a1a;color:#aaa;border:none;border-top:1px solid #222;padding:9px;font-size:12px;cursor:pointer;font-family:inherit;">&#x2715; <span id="txt-scenes-close-player">بستن پلیر / Close Player</span></button>
+        </div>
+        <!-- List -->
+        <div id="scenes-list-container" style="flex:1;overflow-y:auto;padding:12px 14px;"></div>
+    </div>
+    <!-- END SCENES & EDITS MODAL -->
+    
+    <!-- VQ DOWNLOAD QUALITY MODAL -->
+    <div id="vq-backdrop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:600;backdrop-filter:blur(4px);" onclick="closeVqModal()"></div>
+    <div id="vq-modal" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0f0f0f;border-radius:20px 20px 0 0;z-index:601;padding:0;max-height:85vh;overflow-y:auto;border-top:1px solid #222;">
+        <div style="position:sticky;top:0;background:#0f0f0f;padding:16px 18px 12px;border-bottom:1px solid #1e1e1e;display:flex;align-items:center;justify-content:space-between;border-radius:20px 20px 0 0;">
+            <div>
+                <div style="font-size:16px;font-weight:800;color:#fff;direction:rtl;" id="vq-title">انتخاب کیفیت دانلود</div>
+                <div style="font-size:12px;color:#666;margin-top:3px;" id="vq-subtitle">لینک‌های MP4 مستقیم</div>
+            </div>
+            <button onclick="closeVqModal()" style="background:rgba(255,255,255,0.08);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+        </div>
+        <div id="vq-body" style="padding:14px 16px 30px;"></div>
+    </div>
+<script src="js/inline-03.js"></script>
+
+<script src="js/inline-04.js"></script>
+
+
+<script src="js/inline-05.js"></script>
+
+
+<script src="js/inline-06.js"></script>
+
+
+
+<script src="js/inline-07.js"></script>
+
+
+
+<script src="js/inline-08.js"></script>
+
+
+<script src="js/inline-09.js"></script>
+
+
+<script src="js/inline-10.js"></script>
+
+
+<script src="js/inline-11.js"></script>
+
+<script src="js/inline-12.js"></script>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     NO-VPN ACCESS LAYER (Iran network filtering bypass)
+     Purely additive: intercepts fetch() calls + <img>/background-image
+     URLs pointing to TMDB / MyMemory / Pollinations, and the online
+     player's iframe, rerouting them through the user's own Cloudflare
+     Worker (with public proxy fallbacks) automatically when the direct
+     request is slow or blocked.
+═══════════════════════════════════════════════════════════════════ -->
+<script src="js/inline-13.js"></script>
+<script src="js/inline-14.js"></script>
+
+<!-- Family Night: external download archive (kept outside this app file) -->
+<div id="fn-download-page" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:1200;background:#080b0a;color:#fff;overflow-y:auto;direction:rtl;">
+  <div style="position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:12px;padding:15px 16px;background:rgba(8,11,10,.98);border-bottom:1px solid rgba(255,255,255,.1);">
+    <button id="fn-dl-back" onclick="closeFNDownloadPage()" aria-label="Back" style="border:0;background:transparent;color:#fff;font-size:22px;cursor:pointer;padding:5px 8px;"><i class="fa-solid fa-arrow-right"></i></button>
+    <div style="min-width:0;flex:1;"><div id="fn-dl-page-title" style="font-size:15px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;direction:auto;"></div><div id="fn-dl-page-subtitle" style="font-size:11px;color:var(--primary);margin-top:3px;"></div></div>
+  </div>
+  <div id="fn-dl-page-content" style="padding:16px 14px 80px;"></div>
+</div>
+<link rel="stylesheet" href="css/inline-10.css">
+<script src="js/inline-15.js"></script>
+
+<!-- Family Night: strictly isolated detail-header layout patch -->
+<link rel="stylesheet" href="css/inline-11.css">
+<script src="js/inline-16.js"></script>
+
+
+<!-- Family Night Watch Party — refined add-on -->
+<link rel="stylesheet" href="css/inline-12.css">
+<link rel="stylesheet" href="css/inline-13.css">
+<div id="fn-watch-party-root" aria-live="polite"></div>
+<script src="js/inline-17.js"></script>
+    <!-- Family Night performance runtime (v3) -->
+    <script src="./fn-api.js"></script>
+<!-- FINAL PATCH: exact-title AI assistant for the detail modal -->
+<script src="js/inline-18.js"></script>
+
+<script src="js/inline-19.js"></script>
+<script src="js/inline-20.js"></script>
+<script src="js/inline-21.js"></script>
+
+<link rel="stylesheet" href="css/inline-14.css">
+<script src="js/inline-22.js"></script>
+<link rel="stylesheet" href="css/inline-15.css">
+<script src="js/inline-23.js"></script>
+</body>
+</html>
+<!-- FINAL DETAIL AI CONTEXT GUARD v3 -->
+<script src="js/inline-24.js"></script>
+<script src="js/inline-25.js"></script>
+<script src="js/inline-26.js"></script>
+<script src="js/inline-27.js"></script>
+
+
+<!-- v40.10.11: My List scoped controls + standards-based sharing -->
+<link rel="stylesheet" href="css/inline-16.css">
+<script src="js/inline-28.js"></script>
+
+<link rel="stylesheet" href="css/inline-17.css">
+<script src="js/inline-29.js"></script>
+<link rel="stylesheet" href="css/inline-18.css"><link rel="stylesheet" href="css/inline-19.css">
+<link rel="stylesheet" href="css/inline-20.css">
+<link rel="stylesheet" href="css/inline-21.css">
+<!-- Optional EPG override: set window.FN_LIVE_EPG_ENDPOINTS to an array of XMLTV URLs, or store JSON in fn_live_epg_endpoints_v1. -->
+<script src="js/inline-30.js"></script>

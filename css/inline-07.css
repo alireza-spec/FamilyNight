@@ -1,0 +1,7 @@
+
+body.fn-live-mode>.nav,body.fn-live-mode .nav{display:none!important}
+body.fn-live-mode #live-tab{padding-bottom:16px!important}
+#live-tab .fn-live-filters{gap:6px;margin-bottom:10px}
+#live-tab .fn-live-input,#live-tab .fn-live-select{padding:7px 9px;min-height:34px;font-size:11px;border-radius:8px}
+#live-tab .fn-live-filter-option{padding:7px 9px;font-size:11px;gap:6px}
+#live-tab .fn-live-filter-search{padding:6px 8px;margin:5px;width:calc(100% - 10px);font-size:11px}

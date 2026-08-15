@@ -1,0 +1,322 @@
+
+/* ===== v40.10.10 safe sidebar + settings language refinements ===== */
+#sidebar {
+  background: linear-gradient(180deg, var(--surface, #121212), var(--bg, #000)) !important;
+  color: var(--text, #fff) !important;
+  border-left: 1px solid var(--border, #333) !important;
+  box-shadow: -22px 0 60px rgba(0,0,0,.55) !important;
+}
+body[dir="ltr"] #sidebar { border-left: none !important; border-right: 1px solid var(--border, #333) !important; }
+#sidebar .sb-header {
+  border-bottom-color: var(--border, #333) !important;
+  background: transparent !important;
+}
+#sidebar .sb-title {
+  color: var(--primary, #E50914) !important;
+  font-weight: 950 !important;
+  text-shadow: 0 6px 22px var(--primary-soft, rgba(229,9,20,.18));
+}
+#sidebar .sb-profile-section {
+  background: linear-gradient(135deg, var(--card, #1c1c1c), var(--surface, #121212)) !important;
+  border-color: var(--border, #333) !important;
+  box-shadow: 0 14px 34px rgba(0,0,0,.18) !important;
+}
+#sidebar .sb-profile-name,
+#sidebar .sb-item,
+#sidebar .sb-sub-item,
+#sidebar .fn-sidebar-theme-name,
+#sidebar .fn-sidebar-about-title { color: var(--text, #fff) !important; }
+#sidebar .sb-profile-sub,
+#sidebar .fn-sidebar-theme-sub,
+#sidebar .fn-sidebar-about-text { color: var(--sub, #aaa) !important; }
+#sidebar .sb-item {
+  min-height: 52px;
+  border-bottom: 1px solid var(--border, #333) !important;
+  background: transparent !important;
+  border-radius: 14px;
+  margin: 4px 0;
+  padding: 14px 10px !important;
+  position: relative;
+  overflow: hidden;
+  transition: transform .18s cubic-bezier(.2,.8,.2,1), background .2s, border-color .2s, box-shadow .2s;
+}
+#sidebar .sb-item::before {
+  content: '';
+  position: absolute;
+  inset: 6px auto 6px 0;
+  width: 3px;
+  border-radius: 99px;
+  background: var(--primary, #E50914);
+  opacity: 0;
+  transform: scaleY(.25);
+  transition: opacity .2s, transform .2s;
+}
+html[dir="rtl"] #sidebar .sb-item::before { left: auto; right: 0; }
+#sidebar .sb-item:active,
+#sidebar .sb-item:hover {
+  background: linear-gradient(135deg, var(--primary-soft, rgba(229,9,20,.12)), transparent) !important;
+  border-color: var(--primary-soft-2, rgba(229,9,20,.24)) !important;
+  transform: translateX(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+html[dir="ltr"] #sidebar .sb-item:active,
+html[dir="ltr"] #sidebar .sb-item:hover { transform: translateX(3px); }
+#sidebar .sb-item:active::before,
+#sidebar .sb-item:hover::before { opacity: 1; transform: scaleY(1); }
+#sidebar .sb-item i { color: var(--primary, #E50914) !important; }
+#sidebar .sb-item > i.fa-chevron-down,
+#sidebar .sb-item > i.fa-chevron-left { color: var(--sub, #aaa) !important; transition: transform .24s ease, color .2s; }
+#sidebar .sb-sub-list {
+  background: color-mix(in srgb, var(--card, #1c1c1c) 92%, var(--primary, #e50914) 8%) !important;
+  border: 1px solid var(--border, #333) !important;
+  border-radius: 16px !important;
+  margin: 6px 0 12px !important;
+  padding: 8px !important;
+  max-height: 260px !important;
+  overflow-y: auto !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 12px 30px rgba(0,0,0,.22) !important;
+  animation: fnSbDrop .22s cubic-bezier(.2,.8,.2,1);
+}
+@keyframes fnSbDrop { from { opacity: 0; transform: translateY(-8px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+#sidebar .sb-sub-list::-webkit-scrollbar { width: 4px; }
+#sidebar .sb-sub-list::-webkit-scrollbar-thumb { background: var(--primary, #E50914) !important; border-radius: 999px; }
+#sidebar .sb-sub-item {
+  border: 1px solid transparent !important;
+  border-radius: 12px !important;
+  margin: 5px 0;
+  padding: 11px 12px !important;
+  background: var(--button-bg, #222) !important;
+  transition: transform .16s ease, border-color .16s ease, background .16s ease;
+}
+#sidebar .sb-sub-item:active,
+#sidebar .sb-sub-item:hover {
+  transform: scale(.985);
+  border-color: var(--primary-soft-2, rgba(229,9,20,.24)) !important;
+  background: var(--primary-soft, rgba(229,9,20,.12)) !important;
+}
+.fn-imdb-mini {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 39px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 5px;
+  background: #f5c518;
+  color: #000 !important;
+  font-size: 10px;
+  font-weight: 1000;
+  letter-spacing: -.02em;
+  margin-inline-start: 7px;
+  box-shadow: 0 4px 12px rgba(245,197,24,.22);
+}
+#sidebar .fn-country-item {
+  min-height: 48px;
+  position: relative;
+  overflow: hidden;
+  background: var(--button-bg, #222) !important;
+  border: 1px solid var(--border, #333) !important;
+}
+#sidebar .fn-country-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--flag-bg);
+  background-size: cover;
+  background-position: center;
+  opacity: .22;
+  filter: saturate(1.18) contrast(1.05);
+  transform: scale(1.08);
+}
+#sidebar .fn-country-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--button-bg, #222) 82%, transparent), color-mix(in srgb, var(--button-bg, #222) 58%, transparent));
+}
+#sidebar .fn-country-item img,
+#sidebar .fn-country-item span { position: relative; z-index: 1; }
+#sidebar .fn-country-item img { width: 28px !important; height: 20px !important; border-radius: 4px !important; object-fit: cover; box-shadow: 0 3px 10px rgba(0,0,0,.25); }
+#sidebar .fn-sidebar-theme-item {
+  min-height: 58px;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  background: var(--theme-bg) !important;
+  border-color: color-mix(in srgb, var(--theme-c1) 70%, var(--border)) !important;
+}
+#sidebar .fn-sidebar-theme-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,.42), rgba(0,0,0,.14));
+  pointer-events: none;
+}
+#sidebar .fn-sidebar-theme-item > * { position: relative; z-index: 1; }
+#sidebar .fn-sidebar-theme-name { font-size: 12px; font-weight: 950; color: #fff !important; text-shadow: 0 2px 8px rgba(0,0,0,.62); }
+#sidebar .fn-sidebar-theme-sub { font-size: 9px; color: rgba(255,255,255,.78) !important; text-shadow: 0 2px 6px rgba(0,0,0,.55); }
+#sidebar .fn-sidebar-swatches { display: flex; gap: 5px; flex-shrink: 0; }
+#sidebar .fn-sidebar-swatch { width: 13px; height: 13px; border-radius: 50%; background: var(--c); border: 1px solid rgba(255,255,255,.45); box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+#sidebar .fn-sidebar-about-box {
+  background: linear-gradient(135deg, var(--surface), var(--card)) !important;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  line-height: 1.8;
+}
+#sidebar .fn-sidebar-about-title { color: var(--primary) !important; font-weight: 950; margin-bottom: 6px; }
+#sidebar .fn-sidebar-social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+#sidebar .fn-sidebar-social-btn {
+  min-height: 38px;
+  border-radius: 12px;
+  color: #fff !important;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 900;
+  border: 1px solid rgba(255,255,255,.12);
+  transition: transform .16s ease, filter .16s ease;
+}
+#sidebar .fn-sidebar-social-btn:active { transform: scale(.97); filter: brightness(.88); }
+#sidebar .fn-social-tg { background: #0088cc; }
+#sidebar .fn-social-in { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+#sidebar .fn-social-yt { background: #ff0000; }
+#sidebar .fn-social-x { background: #050505; }
+body[data-theme-light="true"] #sidebar .sb-profile-section,
+body[data-theme-light="true"] #sidebar .sb-sub-list,
+body[data-theme-light="true"] #sidebar .fn-sidebar-about-box {
+  box-shadow: 0 14px 30px rgba(15,23,42,.12) !important;
+}
+body[data-theme-light="true"] #sidebar .sb-item,
+body[data-theme-light="true"] #sidebar .sb-sub-item:not(.fn-sidebar-theme-item) {
+  color: var(--text, #111827) !important;
+}
+/* Settings: language must be its own first accordion */
+#settings-tab #fn-settings-language-panel .fn-language-picker { margin-top: 0 !important; }
+#settings-tab #fn-settings-language-panel .fn-language-toggle { display: none !important; }
+#settings-tab #fn-settings-language-panel .fn-language-options {
+  max-height: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  padding: 2px !important;
+}
+
+
+/* ===== v40.10.10 readability + sidebar single-open patch ===== */
+#settings-tab .fn-settings-toggle,
+#settings-tab .fn-settings-toggle .fn-toggle-left,
+#settings-tab .fn-settings-toggle .fn-toggle-title {
+  color: var(--text, #111827) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-shadow: none !important;
+}
+#settings-tab .fn-settings-toggle .fn-toggle-title {
+  display: inline-block !important;
+  font-weight: 950 !important;
+  max-width: calc(100vw - 150px) !important;
+}
+body.theme-light #settings-tab .fn-settings-toggle,
+body[data-theme="day"] #settings-tab .fn-settings-toggle,
+body[data-theme="telegramDay"] #settings-tab .fn-settings-toggle {
+  color: #111827 !important;
+  background: radial-gradient(circle at 8% 0%, rgba(34,158,217,.16), transparent 34%), linear-gradient(135deg, #ffffff, #eaf7ff) !important;
+  border-color: rgba(34,158,217,.26) !important;
+}
+body.theme-light #settings-tab .fn-settings-toggle .fn-toggle-title,
+body.theme-light #settings-tab .fn-settings-toggle .fn-toggle-left,
+body[data-theme="day"] #settings-tab .fn-settings-toggle .fn-toggle-title,
+body[data-theme="day"] #settings-tab .fn-settings-toggle .fn-toggle-left,
+body[data-theme="telegramDay"] #settings-tab .fn-settings-toggle .fn-toggle-title,
+body[data-theme="telegramDay"] #settings-tab .fn-settings-toggle .fn-toggle-left {
+  color: #111827 !important;
+}
+body.theme-light #settings-tab .fn-settings-toggle .fn-toggle-icon,
+body[data-theme="day"] #settings-tab .fn-settings-toggle .fn-toggle-icon,
+body[data-theme="telegramDay"] #settings-tab .fn-settings-toggle .fn-toggle-icon {
+  background: rgba(34,158,217,.12) !important;
+  color: var(--primary, #229ED9) !important;
+  box-shadow: inset 0 0 0 1px rgba(34,158,217,.22) !important;
+}
+
+/* Search tab light themes: names, histories and section labels must stay dark and readable */
+body.theme-light #search-tab .actor-name,
+body.theme-light #search-tab .director-card .actor-name,
+body.theme-light #search-tab .company-name,
+body.theme-light #search-tab .company-type,
+body.theme-light #search-tab .m-title,
+body.theme-light #search-tab .sec-title,
+body.theme-light #search-tab .search-history-text,
+body.theme-light #search-tab .search-history-clear,
+body[data-theme="day"] #search-tab .actor-name,
+body[data-theme="day"] #search-tab .director-card .actor-name,
+body[data-theme="day"] #search-tab .company-name,
+body[data-theme="day"] #search-tab .company-type,
+body[data-theme="day"] #search-tab .m-title,
+body[data-theme="day"] #search-tab .sec-title,
+body[data-theme="day"] #search-tab .search-history-text,
+body[data-theme="day"] #search-tab .search-history-clear,
+body[data-theme="telegramDay"] #search-tab .actor-name,
+body[data-theme="telegramDay"] #search-tab .director-card .actor-name,
+body[data-theme="telegramDay"] #search-tab .company-name,
+body[data-theme="telegramDay"] #search-tab .company-type,
+body[data-theme="telegramDay"] #search-tab .m-title,
+body[data-theme="telegramDay"] #search-tab .sec-title,
+body[data-theme="telegramDay"] #search-tab .search-history-text,
+body[data-theme="telegramDay"] #search-tab .search-history-clear {
+  color: #111827 !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+body.theme-light #search-tab .sec-more,
+body.theme-light #search-tab .search-history-icon,
+body[data-theme="day"] #search-tab .sec-more,
+body[data-theme="day"] #search-tab .search-history-icon,
+body[data-theme="telegramDay"] #search-tab .sec-more,
+body[data-theme="telegramDay"] #search-tab .search-history-icon {
+  color: #4b5563 !important;
+  opacity: 1 !important;
+}
+body.theme-light #search-tab .search-history-item,
+body[data-theme="day"] #search-tab .search-history-item,
+body[data-theme="telegramDay"] #search-tab .search-history-item {
+  background: #ffffff !important;
+  border-bottom-color: rgba(17,24,39,.22) !important;
+}
+body.theme-light #search-history-dropdown,
+body[data-theme="day"] #search-history-dropdown,
+body[data-theme="telegramDay"] #search-history-dropdown {
+  background: #f8fafc !important;
+  border-color: rgba(17,24,39,.22) !important;
+}
+body.theme-light #search-tab input,
+body.theme-light #search-tab #search-input,
+body[data-theme="day"] #search-tab input,
+body[data-theme="day"] #search-tab #search-input,
+body[data-theme="telegramDay"] #search-tab input,
+body[data-theme="telegramDay"] #search-tab #search-input {
+  color: #111827 !important;
+}
+body.theme-light #search-tab input::placeholder,
+body[data-theme="day"] #search-tab input::placeholder,
+body[data-theme="telegramDay"] #search-tab input::placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+}
+
+/* Sidebar sub panels: visual state for the one-open behavior */
+#sidebar .sb-sub-list.fn-sb-open {
+  display: block !important;
+}
+#sidebar .sb-item.fn-sb-toggle-open > i.fa-chevron-down,
+#sidebar .sb-item.fn-sb-toggle-open > i.fa-chevron-left {
+  transform: rotate(180deg) !important;
+  color: var(--primary, #E50914) !important;
+}
+
